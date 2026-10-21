@@ -2,110 +2,84 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GTPL TRU FIBER - Sabse Tez Internet | Surat's Trusted Fiber Partner</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>GTPL TRU FIBER - Sabse Tez Internet | Surat</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
-body{background:#f2f4f8;overflow-x:hidden}
-.mobile{max-width:420px;margin:0 auto;background:#fff;box-shadow:0 0 20px rgba(0,0,0,0.15);position:relative;min-height:100vh}
+body{background:#eef1f5;display:flex;justify-content:center}
+.app{width:100%;max-width:440px;background:#fff;min-height:100vh;box-shadow:0 0 30px rgba(0,0,0,.18);position:relative;overflow:hidden}
 /* HEADER */
-.header{background:#000;padding:14px 16px;display:flex;justify-content:space-between;align-items:center}
-.logo{line-height:0.9}
-.logo .gtpl{color:#0b8de0;font-size:20px;font-weight:800;letter-spacing:1px}
-.logo .tru{color:#0b8de0;font-size:36px;font-weight:900;text-shadow:0 0 10px rgba(11,141,224,0.6)}
-.logo .fiber{color:#ff0f1a;font-size:36px;font-weight:900;margin-left:4px}
-.header-right{color:#fff;display:flex;gap:16px;font-size:22px}
-/* HERO */
-.hero{background:linear-gradient(90deg,#ff7a2a 0%,#ff9a3d 25%,#3a5fa8 70%,#0c2b68 100%);position:relative;padding-bottom:0}
-.hero-top{text-align:center;color:#fff;padding:10px 0 6px;font-weight:600;font-size:15px;letter-spacing:0.3px}
-.hero-top .tr{color:#3cc4ff;font-weight:800}
-.hero-top .u{color:#ff2a2a;font-weight:800}
-.hero-content{display:flex;justify-content:space-between;align-items:flex-start;padding:8px 14px 10px;position:relative;z-index:2}
-.hero-text h1{color:#fff;font-size:32px;font-weight:900;line-height:1.1;text-shadow:0 2px 12px rgba(0,0,0,0.5)}
-.hero-text .guj{color:#ffae2e;font-size:21px;font-weight:700;margin-top:2px;text-shadow:0 1px 4px rgba(0,0,0,0.6)}
-.hero-router{width:115px;position:relative;top:-10px}
-.router-img{width:100%;filter:drop-shadow(0 6px 12px rgba(0,0,0,0.5));border-radius:10px}
-.router-glow{position:absolute;bottom:0px;left:2px;right:2px;height:18px;border:2px solid #00e5ff;border-radius:50%;box-shadow:0 0 12px #00e5ff, inset 0 0 8px rgba(0,229,255,0.4)}
-.surat-icons{display:flex;justify-content:space-between;padding:0 12px 0;margin-top:-8px}
-.surat-icons div{width:38px;height:38px;background:#f8b94a;clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);display:flex;align-items:center;justify-content:center;font-size:18px}
-.skyline{width:100%;height:58px;background:linear-gradient(to top,#0a2a6b 20%,transparent),url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 60"><path d="M0 60 L0 40 L10 40 L15 25 L20 40 L40 40 L50 15 L60 40 L80 40 L90 20 L100 40 L120 40 L125 10 L135 40 L160 40 L170 35 L180 40 L220 40 L230 25 L260 40 L280 30 L300 40 L320 15 L330 40 L350 40 L360 25 L370 40 L400 40 L400 60 Z" fill="%230a2a6b"/></svg>');background-size:cover;margin-top:-10px;position:relative;z-index:1}
-/* FILTERS */
-.filters{background:#0a2a6b;display:flex;gap:6px;padding:10px 8px;flex-wrap:wrap}
-.filters select,.filters button{flex:1;min-width:70px;padding:9px 6px;border-radius:8px;border:none;font-size:12px;font-weight:600;background:#fff}
-.filters .submit{background:#ff8c1a;color:#fff;font-weight:700}
-.trusted{background:#0a2a6b;color:#fff;text-align:center;font-size:11px;padding:6px 4px 12px}
+.header{background:#000;display:flex;justify-content:space-between;align-items:center;padding:12px 14px}
+.logo{line-height:.85}.logo .gtpl{color:#0b8de0;font-size:18px;font-weight:800;display:block;letter-spacing:1px}
+.logo .tru{color:#0b8de0;font-size:34px;font-weight:900}.logo .fib{color:#ff0f1f;font-size:34px;font-weight:900}
+.hicon{color:#fff;font-size:20px;display:flex;gap:14px}
+/* HERO POSTER - PURA CSS ME, KOI IMAGE LINK NAHI */
+.hero{position:relative;background:linear-gradient(100deg,#ff7a2a 0%,#ff8e2e 28%,#3a5fa8 68%,#0a2a6e 100%);padding:8px 0 0;overflow:hidden}
+.hero-top{text-align:center;color:#fff;font-size:13px;font-weight:600;padding-bottom:6px}
+.hero-top .t1{color:#2ec8ff;font-weight:800}.hero-top .t2{color:#ff2a2a;font-weight:800}
+.hero-main{display:flex;justify-content:space-between;align-items:flex-start;padding:8px 14px 0;position:relative;z-index:2}
+.hero-main h1{color:#fff;font-size:31px;font-weight:900;line-height:1.05;text-shadow:0 2px 10px rgba(0,0,0,.4)}
+.hero-main .guj{color:#ffb62e;font-size:19px;font-weight:700;margin-top:4px;text-shadow:0 1px 4px rgba(0,0,0,.4)}
+.router{width:112px;flex-shrink:0;position:relative;top:-4px}
+.router-box{background:#fff;border-radius:10px;padding:7px 6px 8px;text-align:center;box-shadow:0 8px 16px rgba(0,0,0,.45)}
+.router-box .rl{font-size:10px;font-weight:900;line-height:1}.rl .bl{color:#0b8de0}.rl .rd{color:#ff0f1f}
+.router-box .ant{width:2px;height:14px;background:#222;display:inline-block;margin:0 8px;transform:rotate(12deg)}
+.router-icon{font-size:18px;margin-top:4px}
+.dots{display:flex;gap:3px;justify-content:center;margin-top:5px}.dots i{width:7px;height:3px;border-radius:2px;display:inline-block}.dots i:nth-child(1){background:#ff3b30}.dots i:nth-child(2){background:#ffcc00}.dots i:nth-child(3){background:#00d4ff}.dots i:nth-child(4){background:#00e676}
+.glow{position:absolute;left:2px;right:2px;bottom:-5px;height:16px;border:1.5px solid #00f0ff;border-radius:50%;box-shadow:0 0 12px #00f0ff, inset 0 0 6px rgba(0,229,255,.4)}
+.diamond{display:flex;justify-content:space-between;padding:6px 14px 2px}
+.diamond span{width:36px;height:36px;background:#f8b94a;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);display:grid;place-items:center;font-size:12px}
+.skyline{width:100%;height:46px;background:#0a2a6e;position:relative;margin-top:-2px}
+.skyline::before{content:'';position:absolute;bottom:0;width:100%;height:32px;background:#0a2a6e;clip-path:polygon(0 100%,0 70%,3% 60%,7% 68%,11% 35%,14% 50%,18% 22%,22% 50%,26% 32%,30% 58%,36% 42%,42% 65%,50% 38%,58% 60%,66% 32%,72% 52%,78% 38%,84% 58%,88% 45%,92% 62%,96% 48%,100% 62%,100% 100%)}
+.filters{background:#0a2a6e;display:flex;gap:6px;padding:10px 8px;flex-wrap:wrap}
+.filters select,.filters button{flex:1 1 72px;border:0;border-radius:8px;padding:9px 6px;font-size:11.5px;font-weight:600;background:#fff;color:#222}
+.filters button{background:#ff8a1f;color:#fff;font-weight:700}
+.trusted{background:#0a2a6e;color:#cdd8f0;text-align:center;font-size:10.5px;padding:6px 8px 10px;letter-spacing:.2px}
 /* PLANS */
-.plans{padding:18px 12px 10px}
-.plans-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
-.plans-head h2{color:#0a2a5a;font-size:24px;font-weight:800}
-.plans-head span{color:#777;font-size:12px}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.card{background:#fff;border-radius:14px;padding:14px 12px;box-shadow:0 4px 14px rgba(0,0,0,0.07);border:1px solid #eef2f7}
-.badge{background:#1d7bd4;color:#fff;font-size:12px;font-weight:800;padding:6px 10px;border-radius:7px;display:inline-block;margin-bottom:10px}
-.month{color:#6b7a8a;font-size:13px;font-weight:600}
-.price{color:#189a3a;font-size:28px;font-weight:900;margin:6px 0 4px;letter-spacing:-0.5px}
-.desc{font-size:10.5px;color:#222;font-weight:500}
+.plans{padding:16px 12px 8px}
+.head{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.head h2{color:#0a2a6e;font-size:22px;font-weight:800}.head small{color:#7a8696;font-size:11px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.card{background:#fff;border-radius:12px;padding:12px 10px;box-shadow:0 3px 12px rgba(0,0,0,.07);border:1px solid #eef2f7}
+.tag{background:#1976d2;color:#fff;font-size:10.5px;font-weight:800;padding:5px 8px;border-radius:6px;display:inline-block}
+.mon{color:#6e7c8c;font-size:11px;margin-top:8px;font-weight:600}
+.price{color:#138a2f;font-size:22px;font-weight:900;margin:4px 0}.sub{font-size:9px;color:#333}
 /* OTT */
 .ott{text-align:center;padding:18px 12px 10px}
-.ott h3{font-size:14px;font-weight:600;margin-bottom:10px}
-.ott .tr{color:#0b8de0;font-weight:800}.ott .u{color:#ff0f1a;font-weight:800}
-.ott-banner{background:#ffdd6f;color:#000;padding:11px 16px;border-radius:24px;font-size:13px;font-weight:600;display:inline-block;box-shadow:0 2px 8px rgba(0,0,0,0.08)}
-.ott-logos{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:16px;padding:0 6px}
-.ott-logos img{height:28px;border-radius:6px;object-fit:contain}
-.ott-logos span{font-size:10px;font-weight:600;color:#444;display:block;text-align:center;margin-top:2px}
-/* FOOTER */
-.footer{background:#000;color:#fff;text-align:center;padding:18px 12px 24px;font-size:14px}
-.footer a{color:#fff;text-decoration:none;font-weight:600}
-/* FLOATING */
-.float-wa{position:fixed;bottom:88px;right:calc(50% - 190px);background:#25d366;width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.3);z-index:999;font-size:28px}
-.float-call{position:fixed;bottom:22px;right:calc(50% - 190px);background:#1a7ed6;width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.3);z-index:999;font-size:26px;color:#fff}
-@media(max-width:420px){.float-wa{right:14px}.float-call{right:14px}}
+.ott h3{font-size:13px;font-weight:600}.ott .tru{color:#0a8de0;font-weight:800}.ott .fib{color:#ff0f1f;font-weight:800}
+.banner{background:#ffde6a;color:#000;padding:11px 14px;border-radius:22px;font-size:12px;font-weight:600;display:inline-block;margin-top:8px}
+.ott-logos{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:14px;font-size:9px;font-weight:600;color:#333}
+.footer{background:#000;color:#fff;text-align:center;padding:16px 12px 22px;font-size:13px;margin-top:8px}
+.footer a{color:#fff;text-decoration:none}
+.fab-wa{position:fixed;right:12px;bottom:86px;width:54px;height:54px;background:#25d366;border-radius:50%;display:grid;place-items:center;box-shadow:0 4px 14px rgba(0,0,0,.3);z-index:999;color:#fff;font-size:28px;text-decoration:none}
+.fab-call{position:fixed;right:12px;bottom:20px;width:54px;height:54px;background:#1976d2;border-radius:50%;display:grid;place-items:center;box-shadow:0 4px 14px rgba(0,0,0,.3);z-index:999;color:#fff;font-size:24px;text-decoration:none}
 </style>
 </head>
 <body>
-<div class="mobile">
-<div class="header">
-<div class="logo"><div class="gtpl">GTPL</div><div><span class="tru">TRU</span><span class="fiber">FIBER</span></div></div>
-<div class="header-right"><span>🔍</span><span>☰</span><span>👤</span></div>
-</div>
+<div class="app">
+<div class="header"><div class="logo"><span class="gtpl">GTPL</span><div><span class="tru">TRU</span><span class="fib">FIBER</span></div></div><div class="hicon"><span>🔍</span><span>☰</span><span>👤</span></div></div>
 <div class="hero">
-<div class="hero-top">It's time to go <span class="tr">TR</span><span class="u">U</span></div>
-<div class="hero-content">
-<div class="hero-text"><h1>Sabse Tez Internet</h1><div class="guj">સૌથી તેજ ઇન્ટરનેટ</div></div>
-<div class="hero-router"><img class="router-img" src="https://i.ibb.co/7xQ7J9xJ/white-router-gtpl.png" alt="GTPL Router"><div class="router-glow"></div></div>
-</div>
+<div class="hero-top">It's time to go <span class="t1">TR</span><span class="t2">U</span></div>
+<div class="hero-main"><div><h1>Sabse Tez Internet</h1><div class="guj">સૌથી તેજ ઇન્ટરનેટ</div></div><div class="router"><div class="router-box"><div class="rl"><span class="bl">TRU</span><span class="rd"> FIBER</span></div><div><span class="ant"></span><span class="ant"></span></div><div class="router-icon">📶</div><div class="dots"><i></i><i></i><i></i><i></i></div></div><div class="glow"></div></div></div>
+<div class="diamond"><span>◈</span><span>◈</span></div>
 <div class="skyline"></div>
-<div class="filters">
-<select><option>Gujarat</option></select>
-<select><option>Surat city</option></select>
-<select><option>All Plans</option></select>
-<select><option>All Packs</option></select>
-<button class="submit">Submit</button>
-</div>
+<div class="filters"><select><option>Gujarat</option></select><select><option>Surat city</option></select><select><option>All Plans</option></select><select><option>All Packs</option></select><button>Submit</button></div>
 <div class="trusted">સ્થાનીય • તેજ • ભરોસેમંદ • Surat's Trusted Fiber Partner</div>
 </div>
-<div class="plans">
-<div class="plans-head"><h2>Broadband Plans</h2><span>6 plans found</span></div>
+<div class="plans"><div class="head"><h2>Broadband Plans</h2><small>6 plans found</small></div>
 <div class="grid">
-<div class="card"><div class="badge">100 MBPS</div><div class="month">5M</div><div class="price">Rs 2885</div><div class="desc">5 Months • Unlimited Data</div></div>
-<div class="card"><div class="badge">100 MBPS</div><div class="month">9M</div><div class="price">Rs 4875</div><div class="desc">9 Months • Unlimited Data</div></div>
-<div class="card"><div class="badge">100 MBPS</div><div class="month">12M</div><div class="price">Rs 6075</div><div class="desc">12 Months • Unlimited Data</div></div>
-<div class="card"><div class="badge">200 MBPS</div><div class="month">5M</div><div class="price">Rs 3298</div><div class="desc">5 Months • Unlimited Data</div></div>
-<div class="card"><div class="badge">200 MBPS</div><div class="month">9M</div><div class="price">Rs 5618</div><div class="desc">9 Months • Unlimited Data</div></div>
-<div class="card"><div class="badge">200 MBPS</div><div class="month">12M</div><div class="price">Rs 7066</div><div class="desc">12 Months • Unlimited Data</div></div>
-</div>
-</div>
-<div class="ott">
-<h3>It's time to go <span class="tr">TR</span><span class="u">U</span></h3>
-<div class="ott-banner">Customers get bundled access to 14 OTT Apps</div>
-<div class="ott-logos">
-<span>SONY LIV</span><span>discovery+</span><span>playflix</span><span>shemaroo</span><span>hungama</span><span>JOJO</span><span>shemaroo gujarati</span><span>STAGE</span>
-</div>
-</div>
+<div class="card"><div class="tag">100 MBPS</div><div class="mon">5M</div><div class="price">Rs 2885</div><div class="sub">5 Months • Unlimited Data</div></div>
+<div class="card"><div class="tag">100 MBPS</div><div class="mon">9M</div><div class="price">Rs 4875</div><div class="sub">9 Months • Unlimited Data</div></div>
+<div class="card"><div class="tag">100 MBPS</div><div class="mon">12M</div><div class="price">Rs 6075</div><div class="sub">12 Months • Unlimited Data</div></div>
+<div class="card"><div class="tag">200 MBPS</div><div class="mon">5M</div><div class="price">Rs 3298</div><div class="sub">5 Months • Unlimited Data</div></div>
+<div class="card"><div class="tag">200 MBPS</div><div class="mon">9M</div><div class="price">Rs 5618</div><div class="sub">9 Months • Unlimited Data</div></div>
+<div class="card"><div class="tag">200 MBPS</div><div class="mon">12M</div><div class="price">Rs 7066</div><div class="sub">12 Months • Unlimited Data</div></div>
+</div></div>
+<div class="ott"><h3>It's time to go <span class="tru">TR</span><span class="fib">U</span></h3><div class="banner">Customers get bundled access to 14 OTT Apps</div><div class="ott-logos"><div>SONY<br>LIV</div><div>discovery+</div><div>playflix</div><div>shemaroo</div><div>hungama</div><div>JoJo</div><div>shemaroo<br>gujarati</div><div>STAGE</div></div></div>
 <div class="footer">Customer Support 📞 <a href="tel:9898736123">9898736123</a></div>
 </div>
-<a href="https://wa.me/919898736123" class="float-wa">💬</a>
-<a href="tel:9898736123" class="float-call">📞</a>
+<a class="fab-wa" href="https://wa.me/919898736123">💬</a>
+<a class="fab-call" href="tel:9898736123">📞</a>
 </body>
 </html>
