@@ -1,0 +1,22 @@
+{
+  "name": "GTPL TruFiber Surat",
+  "short_name": "GTPL Net",
+  "start_url": "/gtpl-surat-final/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1f4fd8",
+  "icons": [
+    {
+      "src": "/gtpl-surat-final/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/gtpl-surat-final/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

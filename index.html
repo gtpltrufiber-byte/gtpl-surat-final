@@ -1,85 +1,420 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>GTPL TRU FIBER - Sabse Tez Internet | Surat</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800;900&display=swap" rel="stylesheet">
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
-body{background:#eef1f5;display:flex;justify-content:center}
-.app{width:100%;max-width:440px;background:#fff;min-height:100vh;box-shadow:0 0 30px rgba(0,0,0,.18);position:relative;overflow:hidden}
-/* HEADER */
-.header{background:#000;display:flex;justify-content:space-between;align-items:center;padding:12px 14px}
-.logo{line-height:.85}.logo .gtpl{color:#0b8de0;font-size:18px;font-weight:800;display:block;letter-spacing:1px}
-.logo .tru{color:#0b8de0;font-size:34px;font-weight:900}.logo .fib{color:#ff0f1f;font-size:34px;font-weight:900}
-.hicon{color:#fff;font-size:20px;display:flex;gap:14px}
-/* HERO POSTER - PURA CSS ME, KOI IMAGE LINK NAHI */
-.hero{position:relative;background:linear-gradient(100deg,#ff7a2a 0%,#ff8e2e 28%,#3a5fa8 68%,#0a2a6e 100%);padding:8px 0 0;overflow:hidden}
-.hero-top{text-align:center;color:#fff;font-size:13px;font-weight:600;padding-bottom:6px}
-.hero-top .t1{color:#2ec8ff;font-weight:800}.hero-top .t2{color:#ff2a2a;font-weight:800}
-.hero-main{display:flex;justify-content:space-between;align-items:flex-start;padding:8px 14px 0;position:relative;z-index:2}
-.hero-main h1{color:#fff;font-size:31px;font-weight:900;line-height:1.05;text-shadow:0 2px 10px rgba(0,0,0,.4)}
-.hero-main .guj{color:#ffb62e;font-size:19px;font-weight:700;margin-top:4px;text-shadow:0 1px 4px rgba(0,0,0,.4)}
-.router{width:112px;flex-shrink:0;position:relative;top:-4px}
-.router-box{background:#fff;border-radius:10px;padding:7px 6px 8px;text-align:center;box-shadow:0 8px 16px rgba(0,0,0,.45)}
-.router-box .rl{font-size:10px;font-weight:900;line-height:1}.rl .bl{color:#0b8de0}.rl .rd{color:#ff0f1f}
-.router-box .ant{width:2px;height:14px;background:#222;display:inline-block;margin:0 8px;transform:rotate(12deg)}
-.router-icon{font-size:18px;margin-top:4px}
-.dots{display:flex;gap:3px;justify-content:center;margin-top:5px}.dots i{width:7px;height:3px;border-radius:2px;display:inline-block}.dots i:nth-child(1){background:#ff3b30}.dots i:nth-child(2){background:#ffcc00}.dots i:nth-child(3){background:#00d4ff}.dots i:nth-child(4){background:#00e676}
-.glow{position:absolute;left:2px;right:2px;bottom:-5px;height:16px;border:1.5px solid #00f0ff;border-radius:50%;box-shadow:0 0 12px #00f0ff, inset 0 0 6px rgba(0,229,255,.4)}
-.diamond{display:flex;justify-content:space-between;padding:6px 14px 2px}
-.diamond span{width:36px;height:36px;background:#f8b94a;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);display:grid;place-items:center;font-size:12px}
-.skyline{width:100%;height:46px;background:#0a2a6e;position:relative;margin-top:-2px}
-.skyline::before{content:'';position:absolute;bottom:0;width:100%;height:32px;background:#0a2a6e;clip-path:polygon(0 100%,0 70%,3% 60%,7% 68%,11% 35%,14% 50%,18% 22%,22% 50%,26% 32%,30% 58%,36% 42%,42% 65%,50% 38%,58% 60%,66% 32%,72% 52%,78% 38%,84% 58%,88% 45%,92% 62%,96% 48%,100% 62%,100% 100%)}
-.filters{background:#0a2a6e;display:flex;gap:6px;padding:10px 8px;flex-wrap:wrap}
-.filters select,.filters button{flex:1 1 72px;border:0;border-radius:8px;padding:9px 6px;font-size:11.5px;font-weight:600;background:#fff;color:#222}
-.filters button{background:#ff8a1f;color:#fff;font-weight:700}
-.trusted{background:#0a2a6e;color:#cdd8f0;text-align:center;font-size:10.5px;padding:6px 8px 10px;letter-spacing:.2px}
-/* PLANS */
-.plans{padding:16px 12px 8px}
-.head{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
-.head h2{color:#0a2a6e;font-size:22px;font-weight:800}.head small{color:#7a8696;font-size:11px}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:11px}
-.card{background:#fff;border-radius:12px;padding:12px 10px;box-shadow:0 3px 12px rgba(0,0,0,.07);border:1px solid #eef2f7}
-.tag{background:#1976d2;color:#fff;font-size:10.5px;font-weight:800;padding:5px 8px;border-radius:6px;display:inline-block}
-.mon{color:#6e7c8c;font-size:11px;margin-top:8px;font-weight:600}
-.price{color:#138a2f;font-size:22px;font-weight:900;margin:4px 0}.sub{font-size:9px;color:#333}
-/* OTT */
-.ott{text-align:center;padding:18px 12px 10px}
-.ott h3{font-size:13px;font-weight:600}.ott .tru{color:#0a8de0;font-weight:800}.ott .fib{color:#ff0f1f;font-weight:800}
-.banner{background:#ffde6a;color:#000;padding:11px 14px;border-radius:22px;font-size:12px;font-weight:600;display:inline-block;margin-top:8px}
-.ott-logos{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:14px;font-size:9px;font-weight:600;color:#333}
-.footer{background:#000;color:#fff;text-align:center;padding:16px 12px 22px;font-size:13px;margin-top:8px}
-.footer a{color:#fff;text-decoration:none}
-.fab-wa{position:fixed;right:12px;bottom:86px;width:54px;height:54px;background:#25d366;border-radius:50%;display:grid;place-items:center;box-shadow:0 4px 14px rgba(0,0,0,.3);z-index:999;color:#fff;font-size:28px;text-decoration:none}
-.fab-call{position:fixed;right:12px;bottom:20px;width:54px;height:54px;background:#1976d2;border-radius:50%;display:grid;place-items:center;box-shadow:0 4px 14px rgba(0,0,0,.3);z-index:999;color:#fff;font-size:24px;text-decoration:none}
-</style>
-</head>
-<body>
-<div class="app">
-<div class="header"><div class="logo"><span class="gtpl">GTPL</span><div><span class="tru">TRU</span><span class="fib">FIBER</span></div></div><div class="hicon"><span>🔍</span><span>☰</span><span>👤</span></div></div>
-<div class="hero">
-<div class="hero-top">It's time to go <span class="t1">TR</span><span class="t2">U</span></div>
-<div class="hero-main"><div><h1>Sabse Tez Internet</h1><div class="guj">સૌથી તેજ ઇન્ટરનેટ</div></div><div class="router"><div class="router-box"><div class="rl"><span class="bl">TRU</span><span class="rd"> FIBER</span></div><div><span class="ant"></span><span class="ant"></span></div><div class="router-icon">📶</div><div class="dots"><i></i><i></i><i></i><i></i></div></div><div class="glow"></div></div></div>
-<div class="diamond"><span>◈</span><span>◈</span></div>
-<div class="skyline"></div>
-<div class="filters"><select><option>Gujarat</option></select><select><option>Surat city</option></select><select><option>All Plans</option></select><select><option>All Packs</option></select><button>Submit</button></div>
-<div class="trusted">સ્થાનીય • તેજ • ભરોસેમંદ • Surat's Trusted Fiber Partner</div>
-</div>
-<div class="plans"><div class="head"><h2>Broadband Plans</h2><small>6 plans found</small></div>
-<div class="grid">
-<div class="card"><div class="tag">100 MBPS</div><div class="mon">5M</div><div class="price">Rs 2885</div><div class="sub">5 Months • Unlimited Data</div></div>
-<div class="card"><div class="tag">100 MBPS</div><div class="mon">9M</div><div class="price">Rs 4875</div><div class="sub">9 Months • Unlimited Data</div></div>
-<div class="card"><div class="tag">100 MBPS</div><div class="mon">12M</div><div class="price">Rs 6075</div><div class="sub">12 Months • Unlimited Data</div></div>
-<div class="card"><div class="tag">200 MBPS</div><div class="mon">5M</div><div class="price">Rs 3298</div><div class="sub">5 Months • Unlimited Data</div></div>
-<div class="card"><div class="tag">200 MBPS</div><div class="mon">9M</div><div class="price">Rs 5618</div><div class="sub">9 Months • Unlimited Data</div></div>
-<div class="card"><div class="tag">200 MBPS</div><div class="mon">12M</div><div class="price">Rs 7066</div><div class="sub">12 Months • Unlimited Data</div></div>
-</div></div>
-<div class="ott"><h3>It's time to go <span class="tru">TR</span><span class="fib">U</span></h3><div class="banner">Customers get bundled access to 14 OTT Apps</div><div class="ott-logos"><div>SONY<br>LIV</div><div>discovery+</div><div>playflix</div><div>shemaroo</div><div>hungama</div><div>JoJo</div><div>shemaroo<br>gujarati</div><div>STAGE</div></div></div>
-<div class="footer">Customer Support 📞 <a href="tel:9898736123">9898736123</a></div>
-</div>
-<a class="fab-wa" href="https://wa.me/919898736123">💬</a>
-<a class="fab-call" href="tel:9898736123">📞</a>
-</body>
-</html>
+
+<html lang="hi"><head><meta charset="utf-8"/>
+<meta name="google-site-verification" content="Np3fXRW1rEm57p_-ZZolB2ELck3eznlrtdFymDjxyXE"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="index,follow" name="robots"/><meta content="GTPL TruFiber broadband new connection in Surat. High speed fiber Wi-Fi internet: 100 & 200 Mbps unlimited plans from ₹429/month, free-to-use Wi-Fi router, free installation, zero deposit, 14 OTT apps. All Surat city. Call/WhatsApp 98987 36123 – Nasru Saiyed, GTPL TruFiber Company Employee." name="description"/><link href="/gtpl-surat-final/manifest.webmanifest" rel="manifest"/><meta content="#1e3cd6" name="theme-color"/><link href="/gtpl-surat-final/icon-192.png" rel="apple-touch-icon"/><link href="/gtpl-surat-final/icon-192.png" rel="icon"/><title>GTPL Broadband Surat – New Wi-Fi Internet Connection | GTPL TruFiber ₹429/month</title><meta name="keywords" content="GTPL, GTPL Surat, GTPL TruFiber, GTPL broadband, GTPL internet, GTPL wifi, GTPL fiber, GTPL new connection, GTPL broadband Surat, GTPL internet Surat, broadband Surat, internet connection Surat, wifi connection Surat, fiber internet Surat, best broadband in Surat, cheap internet Surat, home wifi Surat, high speed internet Surat, broadband plans Surat, 100 Mbps plan, 200 Mbps plan, unlimited internet, OTT broadband, free-to-use router, free installation, new wifi connection near me, internet connection near me, broadband near me, Adajan, Rander, Pal, Varachha, Katargam, Athwa, Vesu, Piplod, Udhna, Limbayat, Bhestan, Althan, Dindoli, Pandesara, Sachin, Amroli, Jahangirpura, Citylight, Ghod Dod Road, Nanpura, Rustampura, Salabatpura, Sagrampura, Begampura, Gopipura, Majura Gate, Bhatar, Sarthana, Kapodra, Puna, Godadara, Parvat Patiya, Kamrej, Olpad, Hazira, Ichhapor, Kim, Kosamba, Bardoli, Palsana, Kadodara, Chalthan, Jolwa, Kathor, Velanja, Sayan, Kholvad, Lajpore, Bhatpore, Kawas, Magdalla, Dumas, Valak, Laskana, Kosad, Utran, Variav, Sachin GIDC, Pardi, Choryasi, Mangrol, Mandvi, Navsari, Kareli, Tatithaiya, Vav, Ambheti, Kadod, Kachholi, Abrama, Bhatha, Gabheni, Unn, Khajod"/><link rel="canonical" href="https://gtplnet.sites.tab.bot/"/><meta name="geo.region" content="IN-GJ"/><meta name="geo.placename" content="Surat"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "LocalBusiness", "name": "GTPL TruFiber Broadband Surat – Nasru Saiyed", "description": "GTPL TruFiber broadband new connection in Surat. High speed fiber Wi-Fi internet: 100 & 200 Mbps unlimited plans from ₹429/month, free-to-use Wi-Fi router, free installation, zero deposit, 14 OTT apps. All Surat city. Call/WhatsApp 98987 36123 – Nasru Saiyed, GTPL TruFiber Company Employee.", "url": "https://gtplnet.sites.tab.bot/", "telephone": "+91-9898736123", "image": "https://gtplnet.sites.tab.bot/card.jpg", "logo": "https://gtplnet.sites.tab.bot/logo.png", "priceRange": "₹429 – ₹559 / month", "address": {"@type": "PostalAddress", "addressLocality": "Surat", "addressRegion": "Gujarat", "addressCountry": "IN"}, "areaServed": [{"@type": "City", "name": "Surat"}, {"@type": "Place", "name": "Kamrej, Surat"}, {"@type": "Place", "name": "Olpad, Surat"}, {"@type": "Place", "name": "Hazira, Surat"}, {"@type": "Place", "name": "Ichhapor, Surat"}, {"@type": "Place", "name": "Kim, Surat"}, {"@type": "Place", "name": "Kosamba, Surat"}, {"@type": "Place", "name": "Bardoli, Surat"}, {"@type": "Place", "name": "Palsana, Surat"}, {"@type": "Place", "name": "Kadodara, Surat"}, {"@type": "Place", "name": "Chalthan, Surat"}, {"@type": "Place", "name": "Jolwa, Surat"}, {"@type": "Place", "name": "Kathor, Surat"}, {"@type": "Place", "name": "Velanja, Surat"}, {"@type": "Place", "name": "Sayan, Surat"}, {"@type": "Place", "name": "Kholvad, Surat"}, {"@type": "Place", "name": "Lajpore, Surat"}, {"@type": "Place", "name": "Bhatpore, Surat"}, {"@type": "Place", "name": "Kawas, Surat"}, {"@type": "Place", "name": "Magdalla, Surat"}, {"@type": "Place", "name": "Dumas, Surat"}, {"@type": "Place", "name": "Valak, Surat"}, {"@type": "Place", "name": "Laskana, Surat"}, {"@type": "Place", "name": "Kosad, Surat"}, {"@type": "Place", "name": "Utran, Surat"}, {"@type": "Place", "name": "Variav, Surat"}, {"@type": "Place", "name": "Sachin GIDC, Surat"}, {"@type": "Place", "name": "Pardi, Surat"}, {"@type": "Place", "name": "Choryasi, Surat"}, {"@type": "Place", "name": "Mangrol, Surat"}, {"@type": "Place", "name": "Mandvi, Surat"}, {"@type": "Place", "name": "Navsari, Surat"}, {"@type": "Place", "name": "Kareli, Surat"}, {"@type": "Place", "name": "Tatithaiya, Surat"}, {"@type": "Place", "name": "Vav, Surat"}, {"@type": "Place", "name": "Ambheti, Surat"}, {"@type": "Place", "name": "Kadod, Surat"}, {"@type": "Place", "name": "Kachholi, Surat"}, {"@type": "Place", "name": "Abrama, Surat"}, {"@type": "Place", "name": "Bhatha, Surat"}, {"@type": "Place", "name": "Gabheni, Surat"}, {"@type": "Place", "name": "Unn, Surat"}, {"@type": "Place", "name": "Khajod, Surat"}], "openingHours": "Mo-Su 08:00-22:00", "makesOffer": [{"@type": "Offer", "name": "GTPL TruFiber 100 Mbps", "price": "429", "priceCurrency": "INR"}, {"@type": "Offer", "name": "GTPL TruFiber 200 Mbps", "price": "499", "priceCurrency": "INR"}], "employee": {"@type": "Person", "name": "Nasru Saiyed", "jobTitle": "Senior Sales Executive"}}</script>
+<meta content="GTPL TruFiber Surat – New Connection" property="og:title"/><meta content="100 Mbps from ₹429/month. Free To Use Router, free installation. Call 98987 36123" property="og:description"/>
+<meta content="https://gtplnet.sites.tab.bot/card.jpg" property="og:image"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}img{max-width:100%;display:block}[hidden]{display:none!important}a{color:inherit;text-decoration:none}button{font:inherit}
+#mb{position:fixed;right:14px;bottom:86px;z-index:99;width:48px;height:48px;border-radius:50%;border:0;color:#fff;font-size:20px;box-shadow:0 6px 18px rgba(0,0,0,.25);cursor:pointer;background:linear-gradient(135deg,#1e3cd6,#d6247a)}#mb.on{animation:mbp 1.2s ease-in-out infinite}@keyframes mbp{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+.rv{animation:rv .8s cubic-bezier(.2,.7,.2,1) both}@keyframes rv{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+
+body{font-family:'Plus Jakarta Sans','Noto Sans Gujarati',system-ui,sans-serif;background:#f4f6fc;color:#0f1640}
+.nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:10px 16px;background:rgba(255,255,255,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(15,22,64,.06)}
+.nav img{height:34px;width:auto}.nav a{display:flex;align-items:center;gap:6px;background:#0f1640;color:#fff;font-weight:700;font-size:13px;padding:9px 14px;border-radius:99px}.nav svg{width:15px;fill:#fff}
+.hero{position:relative;overflow:hidden;padding:34px 22px 40px;color:#fff;background:linear-gradient(150deg,#08135a 0%,#1e3cd6 48%,#d6247a 100%)}
+.hero:before,.hero:after{content:"";position:absolute;border-radius:50%;filter:blur(40px);opacity:.55}
+.hero:before{width:260px;height:260px;background:#4f7bff;top:-90px;right:-80px;animation:fl 9s ease-in-out infinite}.hero:after{width:220px;height:220px;background:#ff4fa3;bottom:-90px;left:-60px;animation:fl 11s ease-in-out infinite reverse}
+@keyframes fl{50%{transform:translate(20px,18px) scale(1.1)}}
+.hero>*{position:relative;z-index:1}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);padding:6px 12px;border-radius:99px}
+.chip i{width:7px;height:7px;border-radius:50%;background:#5dffa0;box-shadow:0 0 0 4px rgba(93,255,160,.25)}
+.hero h1{font-size:40px;line-height:1.05;font-weight:800;letter-spacing:-.03em;margin:18px 0 12px}
+.hero h1 em{font-style:normal;background:linear-gradient(90deg,#fff,#ffc2e0);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.s{font-size:15px;line-height:1.5;opacity:.88;max-width:300px}
+.badge{position:absolute!important;right:18px;top:96px;width:92px;height:92px;border-radius:50%;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.35);backdrop-filter:blur(8px);display:flex;flex-direction:column;align-items:center;justify-content:center;animation:bob 4s ease-in-out infinite}
+.badge b{font-size:28px;font-weight:800;line-height:1}.badge span{font-size:11px;font-weight:700;letter-spacing:.08em}
+@keyframes bob{50%{transform:translateY(-8px)}}
+.from{margin:22px 0 20px;display:flex;align-items:baseline;gap:8px}.from small{font-size:13px;opacity:.85}.from b{font-size:34px;font-weight:800}.from span{font-size:14px;opacity:.85}
+.cta{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.cta a{display:flex;align-items:center;justify-content:center;gap:8px;padding:15px 8px;border-radius:14px;font-weight:800;font-size:16px}
+.cta svg{width:20px;height:20px}.c1{background:#fff;color:#1e3cd6}.c1 svg{fill:#1e3cd6}.c2{background:#22c55e;color:#fff;box-shadow:0 8px 20px rgba(34,197,94,.35)}.c2 svg{fill:#fff}
+.who{margin-top:18px;font-size:13px;opacity:.9}.who b{font-weight:700}
+.tick{overflow:hidden;white-space:nowrap;background:#0f1640;color:#dfe6ff;font-weight:600;font-size:13px;padding:10px 0}
+.tick span{display:inline-block;padding-left:100%;animation:tk 22s linear infinite}@keyframes tk{to{transform:translateX(-100%)}}
+.sec{padding:40px 18px 8px}.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#d6247a}
+.sec h2{font-size:28px;line-height:1.15;font-weight:800;letter-spacing:-.02em;margin:6px 0 6px}.sec p.lead{color:#5a6390;font-size:14px}
+.tabs{display:grid;grid-template-columns:repeat(3,1fr);background:#e6eaf7;border-radius:14px;padding:4px;margin:20px 0 16px}
+.tabs button{border:0;background:none;padding:10px 4px;border-radius:11px;font-weight:800;font-size:16px;color:#5a6390;cursor:pointer;line-height:1.1}
+.tabs button small{display:block;font-size:11px;font-weight:600}
+.tabs button.act{background:#fff;color:#0f1640;box-shadow:0 4px 12px rgba(15,22,64,.12)}
+.pp{display:grid;gap:14px}
+.pc{position:relative;background:#fff;border-radius:22px;padding:22px 20px;box-shadow:0 1px 0 rgba(15,22,64,.04),0 12px 30px rgba(15,22,64,.07);border:1px solid #e8ecf7}
+.pc.pop{border:2px solid transparent;background:linear-gradient(#fff,#fff) padding-box,linear-gradient(135deg,#1e3cd6,#d6247a) border-box;box-shadow:0 18px 40px rgba(214,36,122,.18)}
+.pc-tag{position:absolute;top:-12px;right:18px;background:linear-gradient(90deg,#1e3cd6,#d6247a);color:#fff;font-size:11px;font-weight:800;padding:6px 12px;border-radius:99px;letter-spacing:.04em}
+.pc-sp{display:flex;align-items:baseline;gap:6px}.pc-sp b{font-size:44px;font-weight:800;letter-spacing:-.03em;line-height:1;background:linear-gradient(90deg,#1e3cd6,#d6247a);-webkit-background-clip:text;background-clip:text;color:transparent}.pc-sp span{font-weight:700;color:#5a6390}
+.pc-pr{font-size:34px;font-weight:800;margin-top:12px;letter-spacing:-.02em}.pc-pr sup{font-size:18px;vertical-align:top;margin-right:2px}.pc-pr small{font-size:14px;color:#5a6390;font-weight:600}
+.pc-tot{font-size:13px;color:#5a6390;margin-top:2px}.pc-tot b{color:#0f1640}
+.pc-l{list-style:none;margin:16px 0;display:grid;gap:8px;font-size:14px;font-weight:600}.pc-l li{display:flex;align-items:center;gap:8px}.pc-l svg{width:18px;height:18px;fill:#fff;background:#22c55e;border-radius:50%;padding:3px}
+.pc-b{display:flex;align-items:center;justify-content:center;gap:6px;padding:14px;border-radius:12px;font-weight:800;background:#0f1640;color:#fff}.pc-b svg{width:18px;fill:#fff}.pop .pc-b{background:linear-gradient(90deg,#1e3cd6,#d6247a)}
+.note{font-size:12px;color:#7a82a8;margin-top:12px;text-align:center}
+.fg{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
+.f{background:#fff;border-radius:18px;padding:16px;border:1px solid #e8ecf7}.f .ii{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#eef1ff,#ffe9f3)}
+.f .ii svg{width:22px;fill:#1e3cd6}.f b{display:block;font-size:14px;margin-top:10px;line-height:1.25}.f span{font-size:12px;color:#7a82a8}
+.ott{margin-top:18px;background:#fff;border-radius:20px;padding:14px;border:1px solid #e8ecf7}
+.steps{margin-top:20px;display:grid;gap:0}.st{display:flex;gap:14px;position:relative;padding-bottom:22px}.st:not(:last-child):before{content:"";position:absolute;left:19px;top:40px;bottom:0;width:2px;background:linear-gradient(#1e3cd6,#d6247a)}
+.st i{flex:none;width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#1e3cd6,#d6247a);color:#fff;font-style:normal;font-weight:800;display:flex;align-items:center;justify-content:center}.st b{display:block;font-size:16px;margin-top:2px}.st span{font-size:14px;color:#5a6390}
+.cc{margin-top:20px;border-radius:24px;padding:24px 20px;background:#0f1640;color:#fff;position:relative;overflow:hidden}.cc:after{content:"";position:absolute;width:200px;height:200px;border-radius:50%;background:radial-gradient(#d6247a,transparent 70%);right:-70px;top:-70px;opacity:.6}
+.cc .av{width:58px;height:58px;border-radius:50%;background:linear-gradient(135deg,#1e3cd6,#d6247a);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:20px;border:3px solid rgba(255,255,255,.2)}
+.cc h3{font-size:22px;margin-top:12px}.cc .t{font-size:13px;opacity:.75}.cc .n{display:block;font-size:30px;font-weight:800;letter-spacing:.02em;margin:14px 0}
+.cc .cta a{position:relative;z-index:1}.sv{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:10px;padding:12px;border:1px solid rgba(255,255,255,.25);border-radius:12px;font-weight:700;font-size:14px;position:relative;z-index:1}.sv svg{width:18px;fill:#fff}
+.faq{margin-top:16px}.faq-i{background:#fff;border:1px solid #e8ecf7;border-radius:14px;margin-bottom:10px}.faq-q{width:100%;text-align:left;border:0;background:none;padding:15px 16px;font-weight:700;font-size:15px;color:#0f1640;display:flex;justify-content:space-between;gap:10px;cursor:pointer}
+.faq-c svg{width:22px;fill:#d6247a;transition:.3s}.faq-a{display:none;padding:0 16px 15px;color:#5a6390;font-size:14px;line-height:1.5}.open .faq-a{display:block}.open .faq-c svg{transform:rotate(180deg)}
+footer{margin-top:40px;background:#08103f;color:#aab3dc;padding:30px 20px 100px;text-align:center;font-size:13px}footer .lg{display:inline-block;background:#fff;border-radius:14px;padding:8px 14px}footer .lg img{height:40px}footer p{margin-top:10px}footer b{color:#fff}
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:90;display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-top:1px solid #e8ecf7}
+.bar a{display:flex;align-items:center;justify-content:center;gap:8px;padding:13px;border-radius:12px;font-weight:800;color:#fff}.bar svg{width:19px;fill:#fff}.bar .b1{background:#1e3cd6}.bar .b2{background:#22c55e}
+.bar{padding:6px 12px calc(6px + env(safe-area-inset-bottom));gap:8px;grid-template-columns:1fr 1fr;max-width:420px;margin:0 auto;left:0;right:0;background:rgba(255,255,255,.88)}
+.bar a{padding:8px 10px;border-radius:999px;font-size:13px;font-weight:700;gap:6px;letter-spacing:.2px;position:relative;overflow:visible;box-shadow:0 3px 10px rgba(20,32,90,.18)}
+.bar svg{width:16px;height:16px;flex:0 0 16px}
+.bar .b1{background:linear-gradient(135deg,#1e3cd6,#3b5bff);animation:cbPulse 2.4s ease-out infinite}
+.bar .b2{background:linear-gradient(135deg,#16a34a,#22c55e);animation:waPulse 2.4s ease-out 1.2s infinite}
+.bar .b1 svg{animation:ring 2.4s ease-in-out infinite;transform-origin:50% 50%}
+.bar .b2 svg{animation:waBob 2.4s ease-in-out 1.2s infinite}
+@keyframes cbPulse{0%{box-shadow:0 3px 10px rgba(20,32,90,.18),0 0 0 0 rgba(30,60,214,.45)}70%,100%{box-shadow:0 3px 10px rgba(20,32,90,.18),0 0 0 10px rgba(30,60,214,0)}}
+@keyframes waPulse{0%{box-shadow:0 3px 10px rgba(20,32,90,.18),0 0 0 0 rgba(34,197,94,.5)}70%,100%{box-shadow:0 3px 10px rgba(20,32,90,.18),0 0 0 10px rgba(34,197,94,0)}}
+@keyframes ring{0%,55%,100%{transform:rotate(0)}6%{transform:rotate(-18deg)}12%{transform:rotate(16deg)}18%{transform:rotate(-14deg)}24%{transform:rotate(12deg)}30%{transform:rotate(-8deg)}36%{transform:rotate(0)}}
+@keyframes waBob{0%,50%,100%{transform:translateY(0) scale(1)}15%{transform:translateY(-3px) scale(1.15)}30%{transform:translateY(0) scale(1)}}
+@media(prefers-reduced-motion:reduce){.bar a,.bar svg{animation:none!important}}
+
+#ldp{position:fixed;inset:0;background:rgba(10,15,50,.62);display:flex;align-items:center;justify-content:center;z-index:99999;font-family:Poppins,"Noto Sans Gujarati",Arial,sans-serif}
+#ldp .bx{width:86%;max-width:360px;background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.4);position:relative}
+#ldp .hd{background:linear-gradient(135deg,#1e3cd6,#d6247a);color:#fff;text-align:center;padding:18px 14px 14px}
+#ldp .hd img{height:34px;filter:drop-shadow(0 0 6px #fff)}
+#ldp .hd h3{margin:8px 0 2px;font-size:21px;font-weight:800}
+#ldp .hd p{margin:0;font-size:13.5px;opacity:.95}
+#ldp .bd{padding:16px}
+#ldp input{width:100%;box-sizing:border-box;border:2px solid #dfe3f5;border-radius:12px;padding:12px 14px;font-size:16px;margin-bottom:10px}
+#ldp button{width:100%;border:0;border-radius:12px;padding:13px;font-size:17px;font-weight:800;color:#fff;background:linear-gradient(135deg,#1e3cd6,#d6247a)}
+#ldp .x{position:absolute;top:8px;right:12px;color:#fff;font-size:24px;line-height:1}
+#ldp small{display:block;text-align:center;color:#666;font-size:11.5px;margin-top:8px}
+#ldp{display:none;animation:ldf .35s ease}#ldp.on{display:flex}@keyframes ldf{from{opacity:0}to{opacity:1}}#ldp .x{cursor:pointer;padding:4px}#ldp input.err{border-color:#d6247a}#ldp .ok{text-align:center;padding:10px 4px;font-size:16px;color:#0e1a5c}#ldp .ok b{color:#16a34a;font-size:20px;display:block;margin-bottom:6px}.cc .av.lg{width:auto;height:auto;border-radius:0;background:none;border:0;justify-content:flex-start}.cc .av.lg img{height:46px;width:auto;filter:drop-shadow(0 0 1px #fff) drop-shadow(0 0 2px #fff) drop-shadow(0 0 6px rgba(255,255,255,.6))}.cc .emp2{display:inline-flex;align-items:center;gap:6px;margin-top:8px;padding:4px 12px;border-radius:20px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.35);font-size:13px;font-weight:700}.cc .emp2 img{height:1.3em;filter:drop-shadow(0 0 1px #fff) drop-shadow(0 0 1.5px #fff)}</style><style>
+.nav{padding:6px 14px;gap:6px}
+.nav .lg{position:relative;display:inline-block;flex:0 0 auto;animation:lgIn 1.6s cubic-bezier(.2,.8,.2,1) both, lgFloat 4s ease-in-out 1.6s infinite}
+.nav .lg img{display:block;height:50px;width:auto;position:relative;z-index:1}
+.nav .lg::before{content:"";position:absolute;inset:-10px -16px;border-radius:50%;background:radial-gradient(closest-side,rgba(30,60,214,.22),rgba(214,36,122,.12) 55%,transparent);z-index:0;animation:halo 3.6s ease-in-out infinite}
+.nav .lg::after{content:"";position:absolute;top:50%;left:-40%;width:180%;height:2px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.0),#fff,rgba(214,36,122,.6),transparent);transform:translateY(-50%);z-index:0;animation:flare 1.6s ease-out .2s both}
+@keyframes lgIn{0%{opacity:0;transform:scale(.55) translateY(6px)}60%{opacity:1;transform:scale(1.08)}100%{opacity:1;transform:scale(1)}}
+@keyframes lgFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-2px)}}
+@keyframes halo{0%,100%{opacity:.5;transform:scale(.92)}50%{opacity:1;transform:scale(1.06)}}
+@keyframes flare{0%{opacity:0;transform:translate(-30%,-50%) scaleX(.2)}40%{opacity:1}100%{opacity:0;transform:translate(30%,-50%) scaleX(1)}}
+
+.rtr{flex:0 0 auto;height:56px;display:flex;align-items:center;animation:rtFloat 2.6s ease-in-out infinite}
+.rtr svg{height:56px;width:auto;overflow:visible}
+.rtr .wv path{opacity:.12;animation:wave 1.8s ease-out infinite}
+.rtr .w1{animation-delay:.15s!important}.rtr .w2{animation-delay:.45s!important}.rtr .w3{animation-delay:.75s!important}
+.rtr .dot{transform-box:fill-box;transform-origin:center;animation:dotP 1.8s ease-in-out infinite}
+.rtr .l{animation:led 1.2s steps(2) infinite}.rtr .l2{animation-delay:.3s}.rtr .l3{animation-delay:.6s}.rtr .l4{animation-delay:.9s}
+@keyframes wave{0%{opacity:.12}30%{opacity:1}75%,100%{opacity:.12}}
+@keyframes dotP{0%,100%{transform:scale(1)}15%{transform:scale(1.6)}40%{transform:scale(1)}}
+@keyframes led{0%{opacity:1}50%{opacity:.25}100%{opacity:1}}
+@keyframes rtFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+
+.fb{position:relative;flex:1 1 auto;height:26px;min-width:30px;margin:0 2px;overflow:visible}
+.fb .ray{position:absolute;top:50%;left:0;width:34px;height:3px;border-radius:3px;background:linear-gradient(90deg,rgba(30,90,255,0),rgba(40,110,255,.95),#bfe0ff);box-shadow:0 0 6px rgba(40,120,255,.95),0 0 14px rgba(30,60,214,.6);opacity:0;animation:ray 1.8s cubic-bezier(.4,0,.2,1) infinite}
+.fb .r1{top:30%;width:22px;animation-delay:.45s;height:2px}
+.fb .r2{top:70%;width:22px;animation-delay:.9s;height:2px}
+.fb .r3{animation-delay:1.35s;width:28px}
+@keyframes ray{0%{left:-10%;opacity:0}15%{opacity:1}85%{opacity:1}100%{left:calc(100% - 10px);opacity:0}}
+.fb .spk{position:absolute;width:4px;height:4px;border-radius:50%;background:#5aa0ff;box-shadow:0 0 8px #2f6bff;opacity:0;animation:spk 1.8s ease-in-out infinite}
+.fb .k0{left:15%;top:20%;animation-delay:.2s}.fb .k1{left:35%;top:75%;animation-delay:.7s}.fb .k2{left:55%;top:25%;animation-delay:1.1s}.fb .k3{left:72%;top:70%;animation-delay:.4s}.fb .k4{left:88%;top:40%;animation-delay:1.4s}
+@keyframes spk{0%,100%{opacity:0;transform:scale(.3)}50%{opacity:1;transform:scale(1)}}
+</style><style id="logo-13">
+.nav .lg{width:142.857px;height:50px;animation:none!important}
+.nav .lg>img{width:142.857px;height:50px;transform-origin:50% 100%;will-change:transform}
+.nav .lg>i{position:absolute;display:block;pointer-events:none}
+.nav .lg>i.cp,.nav .lg>i.gh,.nav .lg>i.sh{left:0;top:0;width:142.857px;height:50px;opacity:0}
+.nav .lg>i.cp{background:url(logo.png) 0 0/100% 100% no-repeat;z-index:0}
+.nav .lg>i.gh{-webkit-mask:url(logo.png) 0 0/100% 100% no-repeat;mask:url(logo.png) 0 0/100% 100% no-repeat;background:var(--c,#1e3cd6);z-index:0}
+.nav .lg>i.sh{-webkit-mask:url(logo.png) 0 0/100% 100% no-repeat;mask:url(logo.png) 0 0/100% 100% no-repeat;background:linear-gradient(100deg,transparent 38%,rgba(255,255,255,.95) 50%,transparent 62%) 100% 0/300% 100% no-repeat;z-index:2}
+.nav .lg>i.sl{height:2px;border-radius:2px;background:linear-gradient(90deg,rgba(30,60,214,0),rgba(30,60,214,.85) 45%,rgba(214,36,122,.95) 88%,#fff);opacity:0;z-index:0;transform-origin:100% 50%}
+.nav .lg>i.sl.r{background:linear-gradient(270deg,rgba(30,60,214,0),rgba(30,60,214,.85) 45%,rgba(214,36,122,.95) 88%,#fff);transform-origin:0 50%}
+.nav .lg>i.du{width:6px;height:6px;border-radius:50%;background:var(--c);opacity:0;z-index:0}
+.nav .lg>i.pt{left:65px;top:19px;width:12px;height:12px;border-radius:50%;background:#fff;box-shadow:0 0 8px 3px rgba(255,255,255,.9),0 0 18px 6px rgba(30,60,214,.7),0 0 30px 10px rgba(214,36,122,.45);opacity:0;z-index:3;animation:lf13p 6s infinite both}
+@keyframes lf13p{0%{transform:scale(0);opacity:0}1.5%{transform:scale(1);opacity:1}3%{transform:scale(1.6);opacity:1}5%,100%{transform:scale(3);opacity:0}}
+.nav .lg>img{transform-origin:50% 50%;animation:lf13a 6s infinite both}
+@keyframes lf13a{0%,2.5%{transform:scale(.03,.03);opacity:0;animation-timing-function:cubic-bezier(.3,0,.9,1)}3%{opacity:1}5%{transform:scale(1.2,.72);animation-timing-function:ease-out}6.5%{transform:scale(.95,1.08)}8%{transform:scale(1.03,.97)}9.5%,95%{transform:none;opacity:1}99%,100%{transform:scale(.96);opacity:0}}
+.nav .lg>i.rw{left:71px;top:25px;width:0;height:0;transform:scaleY(.45);z-index:0}
+.nav .lg>i.rw>b{position:absolute;left:0;top:-1px;width:44px;height:3px;border-radius:3px;background:linear-gradient(90deg,rgba(255,255,255,0),rgba(30,60,214,.9),rgba(214,36,122,.9));transform-origin:0 50%;opacity:0;animation:lf13r 6s infinite both}
+@keyframes lf13r{0%,2.5%{transform:rotate(var(--a)) translateX(4px) scaleX(.2);opacity:0}3.5%{opacity:1}9%{transform:rotate(var(--a)) translateX(84px) scaleX(1);opacity:.9}12%,100%{transform:rotate(var(--a)) translateX(110px) scaleX(.3);opacity:0}}</style><style>
+body{background:url(wp05.jpg) center top/cover fixed no-repeat,#eef2ff!important}
+.hero{background:linear-gradient(180deg,rgba(6,14,70,.48) 0%,rgba(6,14,70,.30) 70%,rgba(6,14,70,.18) 100%)!important}
+.hero:before,.hero:after{opacity:.15!important}
+.hero h1,.hero p,.hero .from{text-shadow:0 2px 12px rgba(0,0,0,.45)}
+section.sec{background:linear-gradient(180deg,rgba(248,250,255,.80),rgba(248,250,255,.90))!important;margin:0!important}
+section.sec:first-of-type{border-radius:22px 22px 0 0}
+</style><style>.who .emp{display:inline-block;margin-top:6px;padding:3px 10px;border-radius:20px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);font-size:12px;font-weight:700;letter-spacing:.2px}</style><style>.who .emp .eml{display:inline-block;height:1.3em;width:auto;vertical-align:-0.32em;margin-right:6px;filter:drop-shadow(0 0 1px #fff) drop-shadow(0 0 1.5px #fff) drop-shadow(0 0 3px rgba(255,255,255,.7))}</style><style id="cheetah-b">
+/* Cheetah race (variant B) — cheetah-run.webp: 24-frame sprite cut from "Cheetahs on the Edge" by Gregory Wilson, CC BY 3.0 */
+.nav{isolation:isolate}
+.nav .lg{z-index:2}
+.nav .rtr{position:relative;z-index:2}
+.ck-fx{position:absolute;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+.ck-rn{position:absolute;top:calc(50% - 20px);left:0;width:100px;animation:ckAcr 1.9s linear infinite}
+.ck-ct{display:block;width:100%;aspect-ratio:264/106;background:url(cheetah-run.webp) 0 0/2400% 100% no-repeat;animation:ckRun .36s steps(24) infinite;position:relative;z-index:2}
+@keyframes ckRun{to{background-position:104.3478% 0}}
+@keyframes ckAcr{0%{left:-110px}100%{left:100%}}
+.ck-tl{position:absolute;right:88%;top:42%;height:2px;width:70px;border-radius:2px;background:linear-gradient(90deg,transparent,rgba(30,60,214,.45),rgba(214,36,122,.6))}
+.ck-tl.b{top:62%;width:44px;opacity:.7}
+.ck-du{position:absolute;right:80%;bottom:calc(4% + var(--y));width:7px;height:7px;border-radius:50%;background:var(--c);animation:ckDu .9s ease-out infinite;z-index:1}
+@keyframes ckDu{0%{transform:translateX(0) scale(calc(var(--s)*.4));opacity:0}15%{opacity:1}100%{transform:translate(-46px,-7px) scale(calc(var(--s)*2.2));opacity:0}}
+.credit-ck{font-size:10px;color:#9aa3c0;text-align:center;padding:4px 12px 8px}
+.credit-ck a{color:inherit;text-decoration:underline}
+</style><style>.docs{display:grid;gap:10px;margin-top:14px}.docs .d{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid #e3e9fb;border-radius:14px;padding:12px 14px;box-shadow:0 4px 14px rgba(30,60,214,.06);font-weight:700;color:#14205a}.docs .d i{flex:0 0 30px;height:30px;border-radius:50%;background:linear-gradient(135deg,#1e3cd6,#d6247a);color:#fff;font-style:normal;display:grid;place-items:center;font-size:14px;font-weight:800}.vids{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}.vids a{position:relative;display:block;border-radius:14px;overflow:hidden;aspect-ratio:9/16;background:#14205a;box-shadow:0 6px 18px rgba(20,32,90,.18)}.vids img{width:100%;height:100%;object-fit:cover;display:block}.vids a:after{content:"";position:absolute;left:50%;top:50%;width:38px;height:38px;margin:-19px;border-radius:50%;background:rgba(255,255,255,.92) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%231e3cd6' d='M9 7l9 5-9 5z'/%3E%3C/svg%3E") center/22px no-repeat}.vids span{position:absolute;left:0;right:0;bottom:0;padding:18px 6px 6px;background:linear-gradient(transparent,rgba(0,0,0,.7));color:#fff;font-size:11px;font-weight:700;text-align:center}.more{display:block;text-align:center;margin-top:12px;font-weight:800;color:#1e3cd6;text-decoration:none}</style><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Gujarati:wght@400;600;800&amp;display=swap" rel="stylesheet"/><style id="premium">
+.ck-fx,.credit-ck{display:none!important}
+body{background:#f3f6ff!important}
+.hero{background:radial-gradient(120% 90% at 100% 0%,rgba(214,36,122,.28) 0%,rgba(214,36,122,0) 55%),radial-gradient(110% 80% at 0% 100%,rgba(79,123,255,.30) 0%,rgba(79,123,255,0) 60%),linear-gradient(160deg,#050c3a 0%,#0a1766 48%,#1630b8 100%)!important;padding-bottom:46px}
+.hero:before,.hero:after{opacity:.10!important;animation:none!important}
+.nav .lg,.rtr{animation:none!important}
+.hero h1{letter-spacing:-.01em}
+.hero h1,.hero p,.hero .from{text-shadow:none!important}
+.chip{backdrop-filter:blur(6px)}
+</style><style id="calm">
+.nav .rw,.nav .pt,.nav .fb,.nav .rtr{display:none!important}
+.bar a,.bar svg{animation:none!important}
+.bar .b1{background:#1e3cd6!important}.bar .b2{background:#16a34a!important}
+#vids{grid-template-columns:repeat(3,1fr)!important}
+</style><style id="wall">
+.bar{display:none!important}
+body{padding-bottom:0!important}
+.nav{display:flex!important;align-items:center;gap:10px}
+.nav .hc,.nav .hw{margin-left:auto;font-size:13px;font-weight:700;padding:9px 16px;border-radius:8px;text-decoration:none;color:#fff;background:#1e3cd6}
+.nav .hw{margin-left:0;background:#fff;color:#0a1766;border:1px solid #cfd8f7}
+.hero{background:linear-gradient(180deg,rgba(5,12,58,.25),rgba(5,12,58,.55)),url(hero-bg.jpg) center/cover no-repeat!important}
+.trust{display:grid;grid-template-columns:repeat(4,1fr);background:#fff;margin:-22px 14px 6px;border-radius:14px;box-shadow:0 10px 30px rgba(10,20,80,.16);position:relative;z-index:3}
+.trust div{text-align:center;padding:14px 4px;border-right:1px solid #e8ecf7}.trust div:last-child{border:0}
+.trust b{display:block;font-size:19px;color:#1e3cd6;font-weight:800}.trust span{font-size:11px;color:#55608a}
+</style><style id="small-cta">.nav .hc,.nav .hw{font-size:11.5px!important;padding:6px 11px!important;border-radius:7px!important;font-weight:600!important}.nav .hc{margin-left:auto!important}</style><style id="softpop">
+#ldp{background:none!important;align-items:flex-end!important;justify-content:center!important;pointer-events:none;padding-bottom:14px}
+#ldp .bx{pointer-events:auto;width:92%!important;max-width:320px!important;border-radius:14px!important;box-shadow:0 8px 28px rgba(10,20,80,.28)!important}
+#ldp .hd{padding:10px 12px 8px!important}#ldp .hd img{height:22px!important}
+#ldp .hd h3{font-size:14px!important;margin:4px 0 0!important}#ldp .hd p{font-size:11.5px!important}
+#ldp .bd{padding:10px!important}#ldp input{padding:9px 11px!important;font-size:14px!important;margin-bottom:7px!important;border-radius:9px!important}
+#ldp button{padding:10px!important;font-size:14px!important;border-radius:9px!important}
+#ldp small{font-size:10px!important;margin-top:5px!important}
+</style><style id="nobadge">.hero .badge{display:none!important}.hero h1{font-size:34px!important;line-height:1.12!important}</style><style id="lead">
+.cta2{display:flex;gap:10px;margin:16px 0 4px}.cta2 a{flex:1;text-align:center;text-decoration:none;font-weight:700;font-size:14px;padding:12px 8px;border-radius:10px}
+.cta2 .c1{background:#fff;color:#0a1766}.cta2 .c2{background:linear-gradient(135deg,#1e3cd6,#d6247a);color:#fff}
+.why .wg{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}.why .wg div{background:#fff;border:1px solid #e3e9fb;border-radius:14px;padding:14px 12px;box-shadow:0 4px 14px rgba(20,32,90,.06)}
+.why .wg b{display:block;font-size:14px;color:#0a1766;margin-bottom:4px}.why .wg span{font-size:12px;color:#55608a;line-height:1.4}
+</style><style id="ott2">.ott2{display:grid;gap:12px;margin-top:16px}.ott2 img{width:100%;display:block;border-radius:16px;background:#fff;padding:10px;border:1px solid #e3e9fb;box-shadow:0 8px 22px rgba(20,32,90,.14),inset 0 1px 0 #fff}</style><link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;800&display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet"/></head><body><nav class="nav"><div aria-hidden="true" class="ck-fx"><div class="ck-rn"><i class="ck-du" style="--y:0px;--s:1;--c:rgba(30,60,214,.30);animation-delay:0s"></i><i class="ck-du" style="--y:2px;--s:0.8;--c:rgba(214,36,122,.28);animation-delay:-0.18s"></i><i class="ck-du" style="--y:-1px;--s:1.2;--c:rgba(120,130,170,.30);animation-delay:-0.36s"></i><i class="ck-du" style="--y:1px;--s:0.9;--c:rgba(30,60,214,.24);animation-delay:-0.54s"></i><i class="ck-du" style="--y:3px;--s:1.1;--c:rgba(214,36,122,.22);animation-delay:-0.72s"></i><i class="ck-tl"></i><i class="ck-tl b"></i><i class="ck-ct"></i></div></div><span aria-label="GTPL TruFiber" class="lg" role="img"><i class="rw"><b style="--a:0deg"></b><b style="--a:45deg"></b><b style="--a:90deg"></b><b style="--a:135deg"></b><b style="--a:180deg"></b><b style="--a:225deg"></b><b style="--a:270deg"></b><b style="--a:315deg"></b></i><i class="pt"></i><img alt="GTPL TruFiber" src="logo.png"/></span><a class="hc" href="tel:+919898736123">Call Now</a><a class="hw" href="https://wa.me/919898736123?text=Hello%2C%20I%20want%20a%20GTPL%20TruFiber%20broadband%20connection.%20Please%20share%20the%20plans.">WhatsApp</a><div aria-hidden="true" class="fb"></div><div aria-hidden="true" class="rtr"><svg height="64" viewbox="0 0 120 84" width="92">
+<defs><lineargradient id="rg" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#1e3cd6"></stop><stop offset="1" stop-color="#d6247a"></stop></lineargradient>
+<lineargradient id="wg" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#1e3cd6"></stop><stop offset="1" stop-color="#d6247a"></stop></lineargradient></defs>
+<g class="wv" fill="none" stroke="url(#wg)" stroke-linecap="round" stroke-width="4">
+<path class="w1" d="M50 34 a14 14 0 0 1 20 0"></path><path class="w2" d="M42 26 a25 25 0 0 1 36 0"></path><path class="w3" d="M34 18 a36 36 0 0 1 52 0"></path></g>
+<circle class="dot" cx="60" cy="40" fill="#d6247a" r="3.2"></circle>
+<rect fill="#0f1640" height="40" rx="2.5" transform="rotate(-12 26 52)" width="5" x="24" y="12"></rect>
+<rect fill="#0f1640" height="40" rx="2.5" transform="rotate(12 94 52)" width="5" x="91" y="12"></rect>
+<rect fill="url(#rg)" height="26" rx="10" width="92" x="14" y="50"></rect>
+<rect fill="#fff" height="9" opacity=".18" rx="5" width="92" x="14" y="50"></rect>
+<circle class="l l1" cx="34" cy="66" fill="#7CFFB2" r="3"></circle><circle class="l l2" cx="46" cy="66" fill="#7CFFB2" r="3"></circle><circle class="l l3" cx="58" cy="66" fill="#7CFFB2" r="3"></circle><circle class="l l4" cx="70" cy="66" fill="#7CFFB2" r="3"></circle>
+</svg></div></nav>
+<section class="hero hero2" style="background:url(heroB.jpg) center/cover no-repeat !important;padding:16px 16px 22px;min-height:0;text-align:center">
+<img src="logo-sm.png" alt="GTPL TruFiber" style="height:44px;display:block;margin:0 auto 10px"/><div style="font:600 13px Sora,sans-serif;letter-spacing:.35em;text-transform:uppercase;color:#3a4672">Welcome to</div>
+<h1 class="rv" style="font:800 38px/1.05 Sora,sans-serif;color:#0a1766;margin:8px 0 10px;text-shadow:none">GTPL TruFiber</h1>
+<p class="s rv" style="font:500 14px/1.4 Sora,sans-serif;color:#3a4672;margin:0 6px 16px;text-shadow:none">Fiber Broadband for Homes, Shops, Offices &amp; Factories</p>
+<div style="display:flex;gap:8px;margin:0 4px"><div style="flex:1;text-align:center;padding:9px;border-radius:12px;background:#fff;border:1px solid #d9e1fb;color:#0a1766;font:600 11px Sora,sans-serif;box-shadow:0 4px 14px rgba(20,32,90,.08)">100 Mbps from<br/><b style="font-size:21px">&#8377;429</b>/month</div><div style="flex:1;text-align:center;padding:9px;border-radius:12px;background:#fff;border:1px solid #d9e1fb;color:#0a1766;font:600 11px Sora,sans-serif;box-shadow:0 4px 14px rgba(20,32,90,.08)">200 Mbps from<br/><b style="font-size:21px">&#8377;499</b>/month</div></div>
+<div class="cta2" style="margin:12px 4px 0"><a href="#plans" class="c1" style="border:1px solid #d9e1fb">See Plans</a><a href="javascript:void(0)" class="c2" onclick="document.getElementById('ldp').classList.add('on')">Get a Free Callback</a></div>
+<p class="who" style="color:#3a4672;margin-top:14px;text-shadow:none">Nasru Saiyed · <b>Senior Sales Executive</b></p></section>
+<div class="trust"><div><b>200</b><span>Mbps fiber</span></div><div><b>14</b><span>OTT apps</span></div><div><b>₹0</b><span>Installation</span></div><div><b>₹0</b><span>Deposit</span></div></div>
+<div class="tick"><span>Free To Use Router  •  Free Installation  •  14 OTT Apps  •  100 Mbps from ₹429/month  •  Zero Deposit  •  Call 98987 36123  •  It's Time To Go Tru!</span></div>
+<section class="sec" id="plans"><div class="eyebrow">Plans</div><h2>Choose Your Plan</h2><p class="lead">The longer the plan, the lower the monthly price.</p>
+<div class="tabs" data-tabs="a"><button class="" data-t="0">3+2<small>5 Months</small></button><button class="" data-t="1">6+3<small>9 Months</small></button><button class="act" data-t="2">9+3<small>12 Months</small></button></div>
+<div class="pp" data-p="a0" hidden=""><div class="pc">
+<div class="pc-sp"><b>100</b><span>Mbps</span></div>
+<div class="pc-pr"><sup>₹</sup>489<small>/month</small></div>
+<div class="pc-tot">Total <b>₹2,885</b> · 5 Months (GST included)</div>
+<ul class="pc-l"><li><svg aria-hidden="true" class="" viewbox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path></svg>Free To Use Router</li><li><svg aria-hidden="true" class="" viewbox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path></svg>Free Installation</li><li><svg aria-hidden="true" class="" viewbox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path></svg>14 OTT Apps</li></ul>
+<a class="pc-b" href="https://gtplnet.sites.tab.bot/book?p=100&amp;v=3%2B2">Book this plan</a></div><div class="pc pop"><span class="pc-tag">★ Most Popular</span>
+<div class="pc-sp"><b>200</b><span>Mbps</span></div>
+<div class="pc-pr"><sup>₹</sup>559<small>/month</small></div>
+<div class="pc-tot">Total <b>₹3,298</b> · 5 Months (GST included)</div>
+<ul class="pc-l"><li><svg aria-hidden="true" class="" viewbox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path></svg>Free To Use Router</li><li><svg aria-hidden="true" class="" viewbox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path></svg>Free Installation</li><li><svg aria-hidden="true" class="" viewbox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path></svg>14 OTT Apps</li></ul>
+<a class="pc-b" href="https://gtplnet.sites.tab.bot/book?p=200&amp;v=3%2B2">Book this plan</a></div></div><div class="pp" data-p="a1" hidden=""><div class="pc">
+<div class="pc-sp"><b>100</b><span>Mbps</span></div>
+<div class="pc-pr"><sup>₹</sup>459<small>/month</small></div>
+<div class="pc-tot">Total <b>₹4,875</b> · 9 Months (GST included)</div>
+<ul class="pc-l"><li><svg aria-hidden="true" class="" viewbox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path></svg>Free To Use Router</li><li><svg aria-hidden="true" class="" viewbox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path></svg>Free Installation</li><li><svg aria-hidden="true" class="" viewbox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path></svg>14 OTT Apps</li></ul>
+<a class="pc-b" href="https://gtplnet.sites.tab.bot/book?p=100&amp;v=6%2B3">Book this plan</a></div><div class="pc pop"><span class="pc-tag">★ Most Popular</span>
+<div class="pc-sp"><b>200</b><span>Mbps</span></div>
+<div class="pc-pr"><sup>₹</sup>529<small>/month</small></div>
+<div class="pc-tot">Total <b>₹5,618</b> · 9 Months (GST included)</div>
+<ul class="pc-l"><li><svg aria-hidden="true" class="" viewbox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path></svg>Free To Use Router</li><li><svg aria-hidden="true" class="" viewbox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path></svg>Free Installation</li><li><svg aria-hidden="true" class="" viewbox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path></svg>14 OTT Apps</li></ul>
+<a class="pc-b" href="https://gtplnet.sites.tab.bot/book?p=200&amp;v=6%2B3">Book this plan</a></div></div><div class="pp" data-p="a2"><div class="pc">
+<div class="pc-sp"><b>100</b><span>Mbps</span></div>
+<div class="pc-pr"><sup>₹</sup>429<small>/month</small></div>
+<div class="pc-tot">Total <b>₹6,075</b> · 12 Months (GST included)</div>
+<ul class="pc-l"><li><svg aria-hidden="true" class="" viewbox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path></svg>Free To Use Router</li><li><svg aria-hidden="true" class="" viewbox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path></svg>Free Installation</li><li><svg aria-hidden="true" class="" viewbox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path></svg>14 OTT Apps</li></ul>
+<a class="pc-b" href="https://gtplnet.sites.tab.bot/book?p=100&amp;v=9%2B3">Book this plan</a></div><div class="pc pop"><span class="pc-tag">★ Most Popular</span>
+<div class="pc-sp"><b>200</b><span>Mbps</span></div>
+<div class="pc-pr"><sup>₹</sup>499<small>/month</small></div>
+<div class="pc-tot">Total <b>₹7,066</b> · 12 Months (GST included)</div>
+<ul class="pc-l"><li><svg aria-hidden="true" class="" viewbox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path></svg>Free To Use Router</li><li><svg aria-hidden="true" class="" viewbox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path></svg>Free Installation</li><li><svg aria-hidden="true" class="" viewbox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path></svg>14 OTT Apps</li></ul>
+<a class="pc-b" href="https://gtplnet.sites.tab.bot/book?p=200&amp;v=9%2B3">Book this plan</a></div></div><p class="note">GST Included in All Plans · Total price shown includes GST</p></section>
+<section class="sec ottsec"><div class="eyebrow">Entertainment</div><h2>14 OTT Apps With Your Plan</h2><p class="lead">Included with your internet plan.</p><div class="ott2"><img alt="OTT apps" src="ott1.jpg"/><img alt="OTT apps" src="ott2.jpg"/><img alt="OTT apps" src="ott3.jpg"/><img alt="OTT apps" src="ott4.jpg"/></div></section>
+<style id="docicons">.docs .d{display:flex;align-items:center;gap:10px}.docs .d .di{flex:none;order:2}.docs .d span{order:3;flex:1}.docs .d i{order:1}</style><section class="sec"><div class="eyebrow">Documents</div><h2>Required Documents</h2><p class="lead">You only need these 5 things for a connection.</p><div class="docs"><div class="d"><i>1</i><img class="di" src="ic-aadhaar.png" alt="" width="40" height="28"><span>Aadhaar Card</span></div><div class="d"><i>2</i><svg class="di" viewBox="0 0 32 32" width="30" height="30" aria-hidden="true"><defs><linearGradient id="gb" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffe27a"/><stop offset="1" stop-color="#ffa800"/></linearGradient></defs><path d="M16 3a8.5 8.5 0 0 0-4.8 15.5c.9.7 1.3 1.6 1.3 2.6V22h7v-.9c0-1 .4-1.9 1.3-2.6A8.5 8.5 0 0 0 16 3z" fill="url(#gb)"/><path d="M12.8 24.5h6.4M13.8 27.5h4.4" stroke="#5b6478" stroke-width="2" stroke-linecap="round"/><path d="M17.2 7.5l-3.2 5.2h3l-1.8 4.3" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/></svg><span>Light Bill</span></div><div class="d"><i>3</i><svg class="di" viewBox="0 0 32 32" width="30" height="30" aria-hidden="true"><defs><linearGradient id="gm" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2a43c9"/><stop offset="1" stop-color="#0a1766"/></linearGradient></defs><rect x="8" y="2" width="16" height="28" rx="3.4" fill="url(#gm)"/><rect x="10" y="5.5" width="12" height="17" rx="1.6" fill="#dbe7ff"/><path d="M13.2 10.5c.4 2.6 2.2 4.6 5 5.2l1-1.4-1.9-1.2-.8.6c-.9-.4-1.5-1.1-1.8-2l.7-.8-1.1-1.8z" fill="#0a1766"/><circle cx="16" cy="26.3" r="1.5" fill="#dbe7ff"/></svg><span>Mobile Number</span></div><div class="d"><i>4</i><svg class="di" viewBox="0 0 32 32" width="30" height="30" aria-hidden="true"><defs><linearGradient id="ge" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff6a5c"/><stop offset="1" stop-color="#d93025"/></linearGradient></defs><rect x="2.5" y="6.5" width="27" height="19" rx="3.2" fill="#fff" stroke="url(#ge)" stroke-width="2"/><path d="M4 9l12 9.2L28 9" fill="none" stroke="url(#ge)" stroke-width="2.3" stroke-linejoin="round" stroke-linecap="round"/></svg><span>E-mail ID</span></div><div class="d"><i>5</i><svg class="di" viewBox="0 0 32 32" width="30" height="30" aria-hidden="true"><defs><linearGradient id="gs" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a4fd0"/><stop offset="1" stop-color="#0a1766"/></linearGradient></defs><path d="M3.5 10.5a3 3 0 0 1 3-3h3.2l1.6-2.5h9.4l1.6 2.5h3.2a3 3 0 0 1 3 3v13a3 3 0 0 1-3 3h-19a3 3 0 0 1-3-3z" fill="url(#gs)"/><circle cx="16" cy="17.5" r="6.2" fill="#fff"/><circle cx="16" cy="17.5" r="4" fill="#0a1766"/><circle cx="14.3" cy="15.8" r="1.2" fill="#fff" opacity=".8"/></svg><span>Selfie Photo</span></div></div></section>
+<section class="sec"><div class="eyebrow">Included</div><h2>With Every Plan</h2>
+<div class="fg"><div class="f"><div class="ii"><svg aria-hidden="true" class="" viewbox="0 0 24 24"><path d="M20.2 5.9l.8-.8C19.6 3.7 17.8 3 16 3s-3.6.7-5 2.1l.8.8C13 4.8 14.5 4.2 16 4.2s3 .6 4.2 1.7zm-.9.8c-.9-.9-2.1-1.4-3.3-1.4s-2.4.5-3.3 1.4l.8.8c.7-.7 1.6-1 2.5-1 .9 0 1.8.3 2.5 1l.8-.8zM19 13h-2V9h-2v4H5c-1.1 0-2 .9-2 2v4c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-4c0-1.1-.9-2-2-2zM8 18H6v-2h2v2zm3.5 0h-2v-2h2v2zm3.5 0h-2v-2h2v2z"></path></svg></div><b>Free To Use Router</b><span>Free To Use WiFi router at home</span></div><div class="f"><div class="ii"><svg aria-hidden="true" class="" viewbox="0 0 24 24"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"></path></svg></div><b>Free Installation</b><span>No installation charge</span></div><div class="f"><div class="ii"><svg aria-hidden="true" class="" viewbox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"></path></svg></div><b>Zero Security Deposit</b><span>Zero security deposit</span></div><div class="f"><div class="ii"><svg aria-hidden="true" class="" viewbox="0 0 24 24"><path d="M16 17.01V10h-2v7.01h-3L15 21l4-3.99h-3zM9 3L5 6.99h3V14h2V6.99h3L9 3z"></path></svg></div><b>Same Upload &amp; Download</b><span>Symmetric fiber speed</span></div><div class="f"><div class="ii"><svg aria-hidden="true" class="" viewbox="0 0 24 24"><path d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v2h8v-2h5c1.1 0 1.99-.9 1.99-2L23 5c0-1.1-.9-2-2-2zm0 14H3V5h18v12z"></path></svg></div><b>14 OTT Apps</b><span>Entertainment included</span></div><div class="f"><div class="ii"><svg aria-hidden="true" class="" viewbox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"></path></svg></div><b>All Surat City</b><span>Service across Surat City</span></div></div></section>
+<section class="sec"><div class="eyebrow">Easy process</div><h2>Get Connected in 3 Steps</h2>
+<div class="steps"><div class="st"><i>1</i><div><b>Call / WhatsApp</b><span>Call or WhatsApp 98987 36123</span></div></div><div class="st"><i>2</i><div><b>Choose a plan</b><span>100 or 200 Mbps — 3+2, 6+3 or 9+3 months</span></div></div><div class="st"><i>3</i><div><b>Free Installation</b><span>Router fitted, internet on — It's Time To Go Tru!</span></div></div></div></section>
+<section class="sec"><div class="cc"><div class="av lg"><img src="logo.png" alt="GTPL TruFiber"/></div><h3>Nasru Saiyed</h3><div class="t">Senior Sales Executive</div><div><span class="emp2"><img src="logo-sm.png" alt=""/>Company Employee</span></div>
+<a class="n" href="tel:+919898736123">98987 36123</a>
+<a class="sv" href="contact.vcf"><svg aria-hidden="true" class="" viewbox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"></path></svg>Save Contact</a></div></section>
+<section class="sec"><div class="eyebrow">Videos</div><h2>Watch Our Videos</h2><p class="lead">Short videos, quick to watch.</p><div class="vids" id="vids"><a href="https://www.youtube.com/shorts/yjQmM-fFylc" target="_blank" rel="noopener"><img decoding="async" alt="Bullet Train Speed" src="vt/yjQmM-fFylc.jpg" width="160" height="120"/><span>Bullet Train Speed</span></a><a href="https://www.youtube.com/shorts/8MWn2IEzm9s" target="_blank" rel="noopener"><img decoding="async" alt="Fast WiFi Surat" src="vt/8MWn2IEzm9s.jpg" width="160" height="120"/><span>Fast WiFi Surat</span></a><a href="https://www.youtube.com/shorts/89fkAxr-xoQ" target="_blank" rel="noopener"><img decoding="async" alt="WiFi from ₹429" src="vt/89fkAxr-xoQ.jpg" width="160" height="120"/><span>WiFi from ₹429</span></a><a href="https://www.youtube.com/shorts/neDsLxZDQws" target="_blank" rel="noopener"><img decoding="async" alt="14 OTT Apps at Home" src="vt/neDsLxZDQws.jpg" width="160" height="120"/><span>14 OTT Apps at Home</span></a><a href="https://www.youtube.com/shorts/QvD9kbwzsrI" target="_blank" rel="noopener"><img decoding="async" alt="Fast Fiber Internet" src="vt/QvD9kbwzsrI.jpg" width="160" height="120"/><span>Fast Fiber Internet</span></a><a href="https://www.youtube.com/shorts/38kQ96iq9q8" target="_blank" rel="noopener"><img decoding="async" alt="New Plan Launch" src="vt/38kQ96iq9q8.jpg" width="160" height="120"/><span>New Plan Launch</span></a><a href="https://www.youtube.com/shorts/L6LCyp6nurM" target="_blank" rel="noopener"><img decoding="async" alt="Superfast WiFi" src="vt/L6LCyp6nurM.jpg" width="160" height="120"/><span>Superfast WiFi</span></a><a href="https://www.youtube.com/shorts/ghQFlkuwuqg" target="_blank" rel="noopener"><img decoding="async" alt="Dhol se Fiber tak" src="vt/ghQFlkuwuqg.jpg" width="160" height="120"/><span>Dhol se Fiber tak</span></a><a href="https://www.youtube.com/shorts/PMNU1Cq-2yY" target="_blank" rel="noopener"><img decoding="async" alt="GTPL Rap" src="vt/PMNU1Cq-2yY.jpg" width="160" height="120"/><span>GTPL Rap</span></a></div><a class="more" href="https://www.youtube.com/@gtpl_trufiber" target="_blank" rel="noopener">More videos on our YouTube channel &rarr;</a></section>
+<section class="sec why"><div class="eyebrow">Why GTPL TruFiber</div><h2>Everything You Need, Nothing Hidden</h2><div class="wg"><div><b>Free To Use Router</b><span>Wi-Fi router provided at no charge.</span></div><div><b>Free Installation</b><span>Quick fitting at your home in Surat City.</span></div><div><b>Zero Security Deposit</b><span>Start without paying a deposit.</span></div><div><b>14 OTT Apps</b><span>Entertainment included with the plan.</span></div><div><b>GST Included in All Plans</b><span>Total plan price shown includes GST.</span></div><div><b>Local Support</b><span>Call or WhatsApp 98987 36123.</span></div></div></section>
+<section class="sec"><div class="eyebrow">FAQ</div><h2>Frequently Asked Questions</h2><div class="faq"><div class="faq-i"><button class="faq-q">Is GST included?<span class="faq-c"><svg aria-hidden="true" class="" viewbox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"></path></svg></span></button><div class="faq-a">Yes. GST Included in All Plans. The total plan price (from ₹2,885) includes GST.</div></div><div class="faq-i"><button class="faq-q">What is the router and installation charge?<span class="faq-c"><svg aria-hidden="true" class="" viewbox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"></path></svg></span></button><div class="faq-a">Nothing. Free To Use Router and Free Installation, both completely free.</div></div><div class="faq-i"><button class="faq-q">Do I need to pay a security deposit?<span class="faq-c"><svg aria-hidden="true" class="" viewbox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"></path></svg></span></button><div class="faq-a">No. Zero Security Deposit.</div></div><div class="faq-i"><button class="faq-q">Which OTT apps are included?<span class="faq-c"><svg aria-hidden="true" class="" viewbox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"></path></svg></span></button><div class="faq-a">14 OTT apps are included. See all the logos in the OTT section above.</div></div><div class="faq-i"><button class="faq-q">What upload speed do I get?<span class="faq-c"><svg aria-hidden="true" class="" viewbox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"></path></svg></span></button><div class="faq-a">Same upload and download speed.</div></div><div class="faq-i"><button class="faq-q">Where is the service available?<span class="faq-c"><svg aria-hidden="true" class="" viewbox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"></path></svg></span></button><div class="faq-a">All Surat City. Apna area confirm karne ke liye Call or WhatsApp 98987 36123.</div></div></div></section>
+<section id="about-gtpl" style="max-width:760px;margin:0 auto;padding:22px 18px;color:#5a6488;font:400 13px/1.7 Sora,sans-serif"><h2 style="font:700 16px Sora,sans-serif;color:#0a1766;margin:0 0 8px">GTPL Broadband in Surat City</h2><p>Looking for a new GTPL internet connection in Surat? GTPL TruFiber offers high speed fiber broadband for homes, shops, offices and factories across Surat City, with 100 Mbps and 200 Mbps Wi-Fi plans from &#8377;429/month, a Free To Use Router, free installation, zero deposit and 14 OTT apps. To get a GTPL broadband connection, call or WhatsApp Nasru Saiyed, GTPL Executive, on +91 98987 36123. GST Included in All Plans.</p></section><footer><span class="lg"><img alt="GTPL TruFiber" src="logo.png"/></span><p><b>It's Time To Go Tru!</b></p><div class="soc" style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:14px 0 6px"><a href="https://wa.me/919898736123?text=Hello" target="_blank" rel="noopener" aria-label="WhatsApp" style="width:42px;height:42px;display:flex"><svg viewBox="0 0 100 100" width="42" height="42" overflow="visible"><defs>
+<linearGradient id="ft0f1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset=".5" stop-color="#fff" stop-opacity=".45"/><stop offset="1" stop-color="#25D366" stop-opacity=".30"/></linearGradient>
+<linearGradient id="ft0r1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff"/><stop offset=".45" stop-color="#fff" stop-opacity=".25"/><stop offset=".7" stop-color="#25D366" stop-opacity=".7"/><stop offset="1" stop-color="#25D366"/></linearGradient>
+<radialGradient id="ft0o1" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#25D366" stop-opacity=".75"/><stop offset="1" stop-color="#25D366" stop-opacity="0"/></radialGradient>
+<radialGradient id="ft0e1" cx=".3" cy=".25" r=".7"><stop offset="0" stop-color="#fff" stop-opacity=".9"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+<filter id="ft0b1" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="4"/></filter>
+<filter id="ft0d1" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="4" stdDeviation="2.5" flood-color="#000" flood-opacity=".25"/></filter></defs>
+<ellipse cx="52" cy="90" rx="38" ry="12" fill="url(#ft0o1)" filter="url(#ft0b1)"/>
+<ellipse cx="14" cy="60" rx="10" ry="28" fill="#25D366" opacity=".35" filter="url(#ft0b1)"/>
+<rect x="10" y="10" width="80" height="80" rx="28" fill="url(#ft0f1)" filter="url(#ft0d1)"/>
+<rect x="11.5" y="11.5" width="77" height="77" rx="26.5" fill="none" stroke="url(#ft0r1)" stroke-width="3"/>
+<rect x="15" y="14" width="70" height="34" rx="18" fill="url(#ft0e1)" opacity=".8"/>
+<path d="M22 78 Q50 90 78 78" stroke="#fff" stroke-width="1.6" fill="none" opacity=".7" stroke-linecap="round"/>
+<g transform="translate(28 28) scale(1.83)" filter="url(#ft0d1)"><circle cx="12" cy="12" r="12" fill="#25D366"/><g transform="translate(4.2 4.2) scale(.65)"><path fill="#fff" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></g></g></svg></a><a href="https://www.facebook.com/gtpltrufibersurat" target="_blank" rel="noopener" aria-label="Facebook" style="width:42px;height:42px;display:flex"><svg viewBox="0 0 100 100" width="42" height="42" overflow="visible"><defs>
+<linearGradient id="ft1f5" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset=".5" stop-color="#fff" stop-opacity=".45"/><stop offset="1" stop-color="#1877F2" stop-opacity=".30"/></linearGradient>
+<linearGradient id="ft1r5" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff"/><stop offset=".45" stop-color="#fff" stop-opacity=".25"/><stop offset=".7" stop-color="#1877F2" stop-opacity=".7"/><stop offset="1" stop-color="#1877F2"/></linearGradient>
+<radialGradient id="ft1o5" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#1877F2" stop-opacity=".75"/><stop offset="1" stop-color="#1877F2" stop-opacity="0"/></radialGradient>
+<radialGradient id="ft1e5" cx=".3" cy=".25" r=".7"><stop offset="0" stop-color="#fff" stop-opacity=".9"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+<filter id="ft1b5" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="4"/></filter>
+<filter id="ft1d5" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="4" stdDeviation="2.5" flood-color="#000" flood-opacity=".25"/></filter></defs>
+<ellipse cx="52" cy="90" rx="38" ry="12" fill="url(#ft1o5)" filter="url(#ft1b5)"/>
+<ellipse cx="14" cy="60" rx="10" ry="28" fill="#1877F2" opacity=".35" filter="url(#ft1b5)"/>
+<rect x="10" y="10" width="80" height="80" rx="28" fill="url(#ft1f5)" filter="url(#ft1d5)"/>
+<rect x="11.5" y="11.5" width="77" height="77" rx="26.5" fill="none" stroke="url(#ft1r5)" stroke-width="3"/>
+<rect x="15" y="14" width="70" height="34" rx="18" fill="url(#ft1e5)" opacity=".8"/>
+<path d="M22 78 Q50 90 78 78" stroke="#fff" stroke-width="1.6" fill="none" opacity=".7" stroke-linecap="round"/>
+<g transform="translate(28 28) scale(1.83)" filter="url(#ft1d5)"><circle cx="12" cy="12" r="12" fill="#1877F2"/><g transform="translate(4.8 5.2) scale(.6)"><path fill="#fff" d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></g></g></svg></a><a href="https://www.instagram.com/suratgtpl/" target="_blank" rel="noopener" aria-label="Instagram" style="width:42px;height:42px;display:flex"><svg viewBox="0 0 100 100" width="42" height="42" overflow="visible"><defs>
+<linearGradient id="ft2f4" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset=".5" stop-color="#fff" stop-opacity=".45"/><stop offset="1" stop-color="#C13584" stop-opacity=".30"/></linearGradient>
+<linearGradient id="ft2r4" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff"/><stop offset=".45" stop-color="#fff" stop-opacity=".25"/><stop offset=".7" stop-color="#C13584" stop-opacity=".7"/><stop offset="1" stop-color="#C13584"/></linearGradient>
+<radialGradient id="ft2o4" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#C13584" stop-opacity=".75"/><stop offset="1" stop-color="#C13584" stop-opacity="0"/></radialGradient>
+<radialGradient id="ft2e4" cx=".3" cy=".25" r=".7"><stop offset="0" stop-color="#fff" stop-opacity=".9"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+<filter id="ft2b4" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="4"/></filter>
+<filter id="ft2d4" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="4" stdDeviation="2.5" flood-color="#000" flood-opacity=".25"/></filter></defs>
+<ellipse cx="52" cy="90" rx="38" ry="12" fill="url(#ft2o4)" filter="url(#ft2b4)"/>
+<ellipse cx="14" cy="60" rx="10" ry="28" fill="#C13584" opacity=".35" filter="url(#ft2b4)"/>
+<rect x="10" y="10" width="80" height="80" rx="28" fill="url(#ft2f4)" filter="url(#ft2d4)"/>
+<rect x="11.5" y="11.5" width="77" height="77" rx="26.5" fill="none" stroke="url(#ft2r4)" stroke-width="3"/>
+<rect x="15" y="14" width="70" height="34" rx="18" fill="url(#ft2e4)" opacity=".8"/>
+<path d="M22 78 Q50 90 78 78" stroke="#fff" stroke-width="1.6" fill="none" opacity=".7" stroke-linecap="round"/>
+<g transform="translate(28 28) scale(1.83)" filter="url(#ft2d4)"><defs><linearGradient id="ft2igg" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#FEDA75"/><stop offset=".3" stop-color="#FA7E1E"/><stop offset=".55" stop-color="#D62976"/><stop offset=".8" stop-color="#962FBF"/><stop offset="1" stop-color="#4F5BD5"/></linearGradient></defs><circle cx="12" cy="12" r="12" fill="url(#ft2igg)"/><g transform="translate(5 5) scale(.58)"><path fill="#fff" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></g></g></svg></a><a href="https://www.youtube.com/@gtpl_trufiber" target="_blank" rel="noopener" aria-label="YouTube" style="width:42px;height:42px;display:flex"><svg viewBox="0 0 100 100" width="42" height="42" overflow="visible"><defs>
+<linearGradient id="ft3f3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset=".5" stop-color="#fff" stop-opacity=".45"/><stop offset="1" stop-color="#E00000" stop-opacity=".30"/></linearGradient>
+<linearGradient id="ft3r3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff"/><stop offset=".45" stop-color="#fff" stop-opacity=".25"/><stop offset=".7" stop-color="#E00000" stop-opacity=".7"/><stop offset="1" stop-color="#E00000"/></linearGradient>
+<radialGradient id="ft3o3" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#E00000" stop-opacity=".75"/><stop offset="1" stop-color="#E00000" stop-opacity="0"/></radialGradient>
+<radialGradient id="ft3e3" cx=".3" cy=".25" r=".7"><stop offset="0" stop-color="#fff" stop-opacity=".9"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+<filter id="ft3b3" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="4"/></filter>
+<filter id="ft3d3" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="4" stdDeviation="2.5" flood-color="#000" flood-opacity=".25"/></filter></defs>
+<ellipse cx="52" cy="90" rx="38" ry="12" fill="url(#ft3o3)" filter="url(#ft3b3)"/>
+<ellipse cx="14" cy="60" rx="10" ry="28" fill="#E00000" opacity=".35" filter="url(#ft3b3)"/>
+<rect x="10" y="10" width="80" height="80" rx="28" fill="url(#ft3f3)" filter="url(#ft3d3)"/>
+<rect x="11.5" y="11.5" width="77" height="77" rx="26.5" fill="none" stroke="url(#ft3r3)" stroke-width="3"/>
+<rect x="15" y="14" width="70" height="34" rx="18" fill="url(#ft3e3)" opacity=".8"/>
+<path d="M22 78 Q50 90 78 78" stroke="#fff" stroke-width="1.6" fill="none" opacity=".7" stroke-linecap="round"/>
+<g transform="translate(28 28) scale(1.83)" filter="url(#ft3d3)"><circle cx="12" cy="12" r="12" fill="#FF0000"/><path fill="#fff" d="M9.8 8.6v6.8l5.9-3.4z"/></g></svg></a><a href="https://t.me/gtpltrufibersurat" target="_blank" rel="noopener" aria-label="Telegram" style="width:42px;height:42px;display:flex"><svg viewBox="0 0 100 100" width="42" height="42" overflow="visible"><defs>
+<linearGradient id="ft4f6" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset=".5" stop-color="#fff" stop-opacity=".45"/><stop offset="1" stop-color="#229ED9" stop-opacity=".30"/></linearGradient>
+<linearGradient id="ft4r6" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff"/><stop offset=".45" stop-color="#fff" stop-opacity=".25"/><stop offset=".7" stop-color="#229ED9" stop-opacity=".7"/><stop offset="1" stop-color="#229ED9"/></linearGradient>
+<radialGradient id="ft4o6" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#229ED9" stop-opacity=".75"/><stop offset="1" stop-color="#229ED9" stop-opacity="0"/></radialGradient>
+<radialGradient id="ft4e6" cx=".3" cy=".25" r=".7"><stop offset="0" stop-color="#fff" stop-opacity=".9"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+<filter id="ft4b6" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="4"/></filter>
+<filter id="ft4d6" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="4" stdDeviation="2.5" flood-color="#000" flood-opacity=".25"/></filter></defs>
+<ellipse cx="52" cy="90" rx="38" ry="12" fill="url(#ft4o6)" filter="url(#ft4b6)"/>
+<ellipse cx="14" cy="60" rx="10" ry="28" fill="#229ED9" opacity=".35" filter="url(#ft4b6)"/>
+<rect x="10" y="10" width="80" height="80" rx="28" fill="url(#ft4f6)" filter="url(#ft4d6)"/>
+<rect x="11.5" y="11.5" width="77" height="77" rx="26.5" fill="none" stroke="url(#ft4r6)" stroke-width="3"/>
+<rect x="15" y="14" width="70" height="34" rx="18" fill="url(#ft4e6)" opacity=".8"/>
+<path d="M22 78 Q50 90 78 78" stroke="#fff" stroke-width="1.6" fill="none" opacity=".7" stroke-linecap="round"/>
+<g transform="translate(28 28) scale(1.83)" filter="url(#ft4d6)"><circle cx="12" cy="12" r="12" fill="#26A5E4"/><g transform="translate(4.6 4.9) scale(.62)"><path fill="#fff" d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></g></g></svg></a><a href="https://x.com/NasruSaiyed" target="_blank" rel="noopener" aria-label="X (Twitter)" style="width:42px;height:42px;display:flex"><svg viewBox="0 0 100 100" width="42" height="42" overflow="visible"><defs>
+<linearGradient id="ft5f7" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset=".5" stop-color="#fff" stop-opacity=".45"/><stop offset="1" stop-color="#000000" stop-opacity=".30"/></linearGradient>
+<linearGradient id="ft5r7" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff"/><stop offset=".45" stop-color="#fff" stop-opacity=".25"/><stop offset=".7" stop-color="#000000" stop-opacity=".7"/><stop offset="1" stop-color="#000000"/></linearGradient>
+<radialGradient id="ft5o7" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#000000" stop-opacity=".75"/><stop offset="1" stop-color="#000000" stop-opacity="0"/></radialGradient>
+<radialGradient id="ft5e7" cx=".3" cy=".25" r=".7"><stop offset="0" stop-color="#fff" stop-opacity=".9"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+<filter id="ft5b7" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="4"/></filter>
+<filter id="ft5d7" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="4" stdDeviation="2.5" flood-color="#000" flood-opacity=".25"/></filter></defs>
+<ellipse cx="52" cy="90" rx="38" ry="12" fill="url(#ft5o7)" filter="url(#ft5b7)"/>
+<ellipse cx="14" cy="60" rx="10" ry="28" fill="#000000" opacity=".35" filter="url(#ft5b7)"/>
+<rect x="10" y="10" width="80" height="80" rx="28" fill="url(#ft5f7)" filter="url(#ft5d7)"/>
+<rect x="11.5" y="11.5" width="77" height="77" rx="26.5" fill="none" stroke="url(#ft5r7)" stroke-width="3"/>
+<rect x="15" y="14" width="70" height="34" rx="18" fill="url(#ft5e7)" opacity=".8"/>
+<path d="M22 78 Q50 90 78 78" stroke="#fff" stroke-width="1.6" fill="none" opacity=".7" stroke-linecap="round"/>
+<g transform="translate(28 28) scale(1.83)" filter="url(#ft5d7)"><circle cx="12" cy="12" r="12" fill="#000000"/><g transform="translate(4.6 4.6) scale(.62)"><path fill="#fff" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></g></g></svg></a><a href="https://www.pinterest.com/gtpl_trufiber_surat/" target="_blank" rel="noopener" aria-label="Pinterest" style="width:42px;height:42px;display:flex"><svg viewBox="0 0 100 100" width="42" height="42" overflow="visible"><defs>
+<linearGradient id="ft6f8" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset=".5" stop-color="#fff" stop-opacity=".45"/><stop offset="1" stop-color="#E60023" stop-opacity=".30"/></linearGradient>
+<linearGradient id="ft6r8" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff"/><stop offset=".45" stop-color="#fff" stop-opacity=".25"/><stop offset=".7" stop-color="#E60023" stop-opacity=".7"/><stop offset="1" stop-color="#E60023"/></linearGradient>
+<radialGradient id="ft6o8" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#E60023" stop-opacity=".75"/><stop offset="1" stop-color="#E60023" stop-opacity="0"/></radialGradient>
+<radialGradient id="ft6e8" cx=".3" cy=".25" r=".7"><stop offset="0" stop-color="#fff" stop-opacity=".9"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+<filter id="ft6b8" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="4"/></filter>
+<filter id="ft6d8" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="4" stdDeviation="2.5" flood-color="#000" flood-opacity=".25"/></filter></defs>
+<ellipse cx="52" cy="90" rx="38" ry="12" fill="url(#ft6o8)" filter="url(#ft6b8)"/>
+<ellipse cx="14" cy="60" rx="10" ry="28" fill="#E60023" opacity=".35" filter="url(#ft6b8)"/>
+<rect x="10" y="10" width="80" height="80" rx="28" fill="url(#ft6f8)" filter="url(#ft6d8)"/>
+<rect x="11.5" y="11.5" width="77" height="77" rx="26.5" fill="none" stroke="url(#ft6r8)" stroke-width="3"/>
+<rect x="15" y="14" width="70" height="34" rx="18" fill="url(#ft6e8)" opacity=".8"/>
+<path d="M22 78 Q50 90 78 78" stroke="#fff" stroke-width="1.6" fill="none" opacity=".7" stroke-linecap="round"/>
+<g transform="translate(28 28) scale(1.83)" filter="url(#ft6d8)"><circle cx="12" cy="12" r="12" fill="#E60023"/><g transform="translate(4.2 4.2) scale(.65)"><path fill="#fff" d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592.026 11.985.026L12.017 0z"/></g></g></svg></a></div><div style="text-align:center;margin:14px auto;max-width:520px"><img src="plans.jpg" alt="GTPL TruFiber broadband plans in Surat City: 100 Mbps and 200 Mbps unlimited internet plan price list, Free To Use Router, free installation" title="GTPL TruFiber broadband plans Surat" loading="lazy" style="width:100%;height:auto;border-radius:14px"/></div>
+<div style="text-align:center;margin:10px 0 6px"><img src="logo-sm.png" alt="GTPL TruFiber" style="height:56px;width:auto"/></div><p style="margin:0 0 8px;font-size:13px;opacity:.85">Follow us: WhatsApp · Facebook · Instagram · YouTube · Telegram · X · Pinterest</p><p>Nasru Saiyed · Senior Sales Executive<br/>Call 98987 36123 · All Surat City</p><p class="credit-ck">Cheetah clip: Gregory Wilson / Cincinnati Zoo, <a href="https://commons.wikimedia.org/wiki/File:Cheetahs_on_the_Edge_(Director%27s_Cut).webm" rel="noopener" target="_blank">CC BY 3.0</a></p></footer>
+<div class="bar"><a class="b1" href="tel:+919898736123"><svg aria-hidden="true" class="" viewbox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"></path></svg>Call</a><a class="b2" href="https://wa.me/919898736123?text=Hi%2C%20mujhe%20GTPL%20TruFiber%20broadband%20connection%20chahiye.%20Plans%20batayein."><svg aria-hidden="true" class="" viewbox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"></path></svg>WhatsApp</a></div><div id="inst" style="display:none;padding:0 16px 12px"><button id="ib" style="width:100%;padding:14px;border:0;border-radius:14px;background:#14205a;color:#fff;font-weight:800;font-size:16px">Install App</button></div>
+<div id="ios" style="display:none;margin:0 16px 12px;padding:12px;border-radius:14px;background:#eef3ff;color:#14205a;font-size:14px;text-align:center">App ki tarah rakhein: neeche <b>Share</b> dabao → <b>"Add to Home Screen"</b></div>
+<script>if('serviceWorker' in navigator)navigator.serviceWorker.register('/gtpl-surat-final/sw.js');let dp;addEventListener('beforeinstallprompt',e=>{e.preventDefault();dp=e;document.getElementById('inst').style.display='block'});document.addEventListener('click',e=>{if(e.target.id==='ib'&&dp){dp.prompt();dp=null;document.getElementById('inst').style.display='none'}});
+(function(){var ua=navigator.userAgent;if(/iPhone|iPad|iPod/.test(ua)&&!navigator.standalone)document.getElementById('ios').style.display='block';})();</script>
+
+<script>
+document.querySelectorAll('[data-tabs]').forEach(function(g){var bs=g.querySelectorAll('[data-t]');bs.forEach(function(b){b.addEventListener('click',function(){bs.forEach(function(x){x.classList.toggle('act',x===b)});document.querySelectorAll('[data-p^="'+g.dataset.tabs+'"]').forEach(function(p){p.hidden=p.dataset.p!==g.dataset.tabs+b.dataset.t})})})});
+document.querySelectorAll('.faq-q').forEach(function(q){q.addEventListener('click',function(){q.parentNode.classList.toggle('open')})});
+</script>
+<div id="ldp"><div class="bx"><span class="x" id="ldx">×</span><div class="hd"><img src="logo.png"/><h3>Free Installation + Free To Use Router</h3><p>તમારું નામ અને નંબર નાખો — અમે તરત કૉલ કરીશું</p></div><div class="bd" id="ldbd"><input id="ldn" placeholder="તમારું નામ" maxlength="40"/><input id="ldm" placeholder="મોબાઇલ નંબર (10 અંક)" inputmode="numeric" maxlength="10"/><button id="ldb">મને કૉલ કરો</button><small>Nasru Saiyed · Senior Sales Executive · GTPL TruFiber</small></div></div></div><script>(function(){var P=document.getElementById('ldp');if(!P)return;
+try{if(sessionStorage.getItem('gtpl_ld'))return}catch(e){}
+var sc=0;window.addEventListener('scroll',function(){sc=Math.max(sc,window.scrollY)},{passive:true});setTimeout(function(){if(sc>600){P.classList.add('on');try{sessionStorage.setItem('gtpl_ld','1')}catch(e){}}},45000);
+function cl(){P.classList.remove('on')}
+document.getElementById('ldx').onclick=cl;P.addEventListener('click',function(e){if(e.target===P)cl()});
+var m=document.getElementById('ldm');m.addEventListener('input',function(){m.value=m.value.replace(/\D/g,'').slice(0,10)});
+document.getElementById('ldb').onclick=function(){var n=document.getElementById('ldn'),nv=n.value.trim(),mv=m.value;n.classList.toggle('err',nv.length<2);m.classList.toggle('err',!/^[6-9]\d{9}$/.test(mv));if(nv.length<2||!/^[6-9]\d{9}$/.test(mv))return;
+this.disabled=true;var src='';try{src=sessionStorage.getItem('gtpl_src')||''}catch(e){}
+var ms='NEW BOOKING - GTPL TruFiber (Website popup - call request)\nNaam: '+nv+'\nMobile: '+mv+'\nAddress: -\nPlan: - (call karke batana)\nKahan se: '+src;
+fetch('https://formsubmit.co/ajax/nasru.saiyed@mail.tab.bot',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({_subject:'GTPL NEW BOOKING '+nv+' '+mv+' (popup)',_template:'box',_captcha:'false',booking:ms})}).catch(function(){});
+
+document.getElementById('ldbd').innerHTML='<div class="ok"><b>આભાર '+nv.replace(/[<>&]/g,'')+'!</b>Hum jaldi hi <b style="display:inline;font-size:16px;color:#0e1a5c">'+mv+'</b> પર કૉલ કરીશું<br><br><a href="/gtpl-surat-final/plans.jpg" target="_blank" style="color:#1e3cd6;font-weight:700">પ્લાન જુઓ</a></div>';setTimeout(cl,6000)}})();</script><!--DIWALI-START--><style id="diwali-css">.rd{overflow:visible}.rd .fl{transform-box:fill-box;transform-origin:50% 100%}.rd .halo{transform-box:fill-box;transform-origin:50% 60%}.dwrow{display:flex;align-items:center;justify-content:center;gap:8px;margin:2px 0 4px}.dwt{white-space:nowrap;font:400 36px/1.1 'Great Vibes',cursive;padding:0 6px;background:linear-gradient(100deg,#7a3b00 0%,#d99a1a 25%,#fff0a8 40%,#d99a1a 55%,#8a4300 75%,#d99a1a 100%);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:dwp 2s ease-out forwards,dws 2.4s linear 2s infinite}@keyframes dwp{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}@keyframes dws{from{background-position:100% 0}to{background-position:-100% 0}}.dwl{position:absolute;bottom:6px;pointer-events:none;z-index:2}.dwl.l{left:8px}.dwl.r{right:8px}.dflame{transform-origin:30px 28px;animation:dfl 1.1s ease-in-out infinite alternate}@keyframes dfl{from{transform:scale(1,.92) skewX(-3deg);opacity:.9}to{transform:scale(1.06,1.08) skewX(3deg);opacity:1}}.dwish{font:700 12px Sora,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#c2410c;margin-bottom:6px}#dwc{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:50}@media (prefers-reduced-motion:reduce){#dwc{display:none}.dflame{animation:none}}</style>
+<script id="diwali-js">(function(){
+var hero=document.querySelector('.hero2')||document.querySelector('.hero');if(!hero)return;hero.style.position='relative';
+var row=document.createElement('div');row.className='dwrow';row.innerHTML=`<svg class="rd" viewBox="0 0 80 78" width="30" height="29"><defs>
+<radialGradient id="ga" cx="50%" cy="85%" r="75%"><stop offset="0" stop-color="#ffd27a" stop-opacity=".95"/><stop offset=".4" stop-color="#ff9a1f" stop-opacity=".45"/><stop offset="1" stop-color="#ff7a00" stop-opacity="0"/></radialGradient>
+<linearGradient id="fa" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#2b6bff"/><stop offset=".18" stop-color="#ffcf4a"/><stop offset=".6" stop-color="#ff8a00"/><stop offset="1" stop-color="#ff3d00" stop-opacity=".9"/></linearGradient>
+<linearGradient id="ba" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e58a43"/><stop offset=".45" stop-color="#b8571f"/><stop offset="1" stop-color="#6e2d0c"/></linearGradient>
+<radialGradient id="oa" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#ffb347"/><stop offset="1" stop-color="#7a3a10"/></radialGradient></defs>
+<ellipse class="halo" cx="40" cy="30" rx="34" ry="30" fill="url(#ga)"/>
+<path d="M6 46 Q40 80 74 46 Q40 54 6 46Z" fill="url(#ba)"/>
+<ellipse cx="40" cy="45" rx="34" ry="8.5" fill="#d9772f"/><ellipse cx="40" cy="45" rx="30" ry="6.2" fill="url(#oa)"/>
+<path d="M12 48 Q40 66 68 48" stroke="#f4b26b" stroke-width="1.2" fill="none" opacity=".6"/>
+<rect x="38.6" y="36" width="2.8" height="9" rx="1.2" fill="#2a1408"/>
+<g class="fl"><path d="M40 40 C31 30 33 18 40 5 C47 18 49 30 40 40Z" fill="url(#fa)"/><path d="M40 39 C36 33 37 26 40 19 C43 26 44 33 40 39Z" fill="#fff6c8"/></g></svg><span class="dwt">Happy Diwali</span><svg class="rd" viewBox="0 0 80 78" width="30" height="29"><defs>
+<radialGradient id="gb" cx="50%" cy="85%" r="75%"><stop offset="0" stop-color="#ffd27a" stop-opacity=".95"/><stop offset=".4" stop-color="#ff9a1f" stop-opacity=".45"/><stop offset="1" stop-color="#ff7a00" stop-opacity="0"/></radialGradient>
+<linearGradient id="fb" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#2b6bff"/><stop offset=".18" stop-color="#ffcf4a"/><stop offset=".6" stop-color="#ff8a00"/><stop offset="1" stop-color="#ff3d00" stop-opacity=".9"/></linearGradient>
+<linearGradient id="bb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e58a43"/><stop offset=".45" stop-color="#b8571f"/><stop offset="1" stop-color="#6e2d0c"/></linearGradient>
+<radialGradient id="ob" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#ffb347"/><stop offset="1" stop-color="#7a3a10"/></radialGradient></defs>
+<ellipse class="halo" cx="40" cy="30" rx="34" ry="30" fill="url(#gb)"/>
+<path d="M6 46 Q40 80 74 46 Q40 54 6 46Z" fill="url(#bb)"/>
+<ellipse cx="40" cy="45" rx="34" ry="8.5" fill="#d9772f"/><ellipse cx="40" cy="45" rx="30" ry="6.2" fill="url(#ob)"/>
+<path d="M12 48 Q40 66 68 48" stroke="#f4b26b" stroke-width="1.2" fill="none" opacity=".6"/>
+<rect x="38.6" y="36" width="2.8" height="9" rx="1.2" fill="#2a1408"/>
+<g class="fl"><path d="M40 40 C31 30 33 18 40 5 C47 18 49 30 40 40Z" fill="url(#fb)"/><path d="M40 39 C36 33 37 26 40 19 C43 26 44 33 40 39Z" fill="#fff6c8"/></g></svg>`;var lg_=hero.querySelector('img');hero.insertBefore(row,lg_?lg_.nextSibling:hero.firstChild);
+(function(){var F=row.querySelectorAll('.fl'),Hh=row.querySelectorAll('.halo'),t0=0;function tk(t){F.forEach(function(f,i){var s=Math.sin(t/110+i*2)*.5+Math.sin(t/47+i)*.5,r=Math.random()*.06;f.style.transform='scaleY('+(1.02+s*.09+r)+') scaleX('+(.97-s*.05)+') skewX('+(s*5)+'deg)'});Hh.forEach(function(g,i){g.style.opacity=.8+Math.sin(t/140+i)*.15+Math.random()*.05});requestAnimationFrame(tk)}requestAnimationFrame(tk)})();
+if(window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+var c=document.createElement('canvas');c.id='dwc';document.body.appendChild(c);var x=c.getContext('2d'),W,H,dpr=Math.min(devicePixelRatio||1,2);
+function rs(){W=innerWidth;H=innerHeight;c.width=W*dpr;c.height=H*dpr;x.setTransform(dpr,0,0,dpr,0,0)}rs();addEventListener('resize',rs);
+var cols=['#ffffff','#ffd1e8','#ff5fa2','#ff8a3d','#ffd23f','#ff3b3b','#c77dff','#7ee0ff','#ffffff'];
+var P=[],F=[],R=[],t0=performance.now(),last=t0;
+function petal(){return{x:Math.random()*W,y:-20-Math.random()*H*.4,r:5+Math.random()*7,vy:40+Math.random()*60,vx:(Math.random()-.5)*30,a:Math.random()*6.28,va:(Math.random()-.5)*3,sw:Math.random()*6.28,c:cols[Math.random()*cols.length|0]}}
+for(var i=0;i<55;i++)P.push(petal());
+function burst(px,py){var col=cols[1+(Math.random()*7|0)];for(var i=0;i<46;i++){var a=Math.random()*6.28,s=40+Math.random()*130;F.push({x:px,y:py,vx:Math.cos(a)*s,vy:Math.sin(a)*s,l:1,c:Math.random()<.3?'#ffd23f':col})}}
+var nextR=700;
+function frame(now){var dt=Math.min((now-last)/1000,.05);last=now;var el=now-t0;x.clearRect(0,0,W,H);
+if(el>nextR&&el<11000){R.push({x:W*(.15+Math.random()*.7),y:H,ty:H*(.18+Math.random()*.3),vy:-380});nextR+=1100+Math.random()*700}
+for(i=R.length-1;i>=0;i--){var r=R[i];r.y+=r.vy*dt;x.fillStyle='#ffd23f';x.fillRect(r.x-1,r.y,2,10);if(r.y<=r.ty){burst(r.x,r.y);R.splice(i,1)}}
+for(i=F.length-1;i>=0;i--){var f=F[i];f.vy+=90*dt;f.x+=f.vx*dt;f.y+=f.vy*dt;f.l-=dt*.8;if(f.l<=0){F.splice(i,1);continue}x.globalAlpha=f.l;x.fillStyle=f.c;x.beginPath();x.arc(f.x,f.y,2,0,6.28);x.fill()}x.globalAlpha=1;
+for(i=0;i<P.length;i++){var p=P[i];p.sw+=dt*2;p.y+=p.vy*dt;p.x+=(p.vx+Math.sin(p.sw)*25)*dt;p.a+=p.va*dt;if(p.y>H+20){if(el<7000){P[i]=petal()}else{p.dead=1}}
+if(p.dead)continue;x.save();x.translate(p.x,p.y);x.rotate(p.a);x.scale(1,.55+.45*Math.abs(Math.sin(p.sw)));x.fillStyle=p.c;x.globalAlpha=.92;x.beginPath();x.ellipse(0,0,p.r,p.r*.62,0,0,6.28);x.fill();x.restore()}
+x.globalAlpha=1;
+if(el<14000||F.length||R.length||P.some(function(p){return!p.dead}))requestAnimationFrame(frame);else c.remove()}
+requestAnimationFrame(frame)})();</script><!--DIWALI-END--></body></html>
